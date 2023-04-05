@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 import os
+import requests
 import tkinter as tk
+from io import BytesIO
 from pptx import Presentation
 from pptx.util import Inches, Pt
-import requests
-from PIL import Image
-from io import BytesIO
 from pptx.dml.color import RGBColor
+from PIL import Image
 
 # Import the OpenAI API and set the API key
 import openai
@@ -21,7 +21,7 @@ def generate_powerpoint_and_image():
     # Get the topic name from the input field
     topic_name = topic_entry.get()
 
-    # Translate the topic name to English using GPT for DALL-E prompt
+    # Translate topic name to English using GPT for DALL-E prompt
     prompt = f"Translate {topic_name} to English."
     response = openai.Completion.create(
         engine="text-davinci-002",
@@ -33,7 +33,8 @@ def generate_powerpoint_and_image():
     )
     topic_name_en = response.choices[0].text.strip()
     
-   # Generate 8 key points to use as slides
+   # Generate 8 key points to use as slides title and topic for slides
+   # In english: Write 8 short titles of maximum 6 words on key points to be covered in a lesson on {topic_name}. It is important that the terms {topic_name} always appear.
     prompt = f"Scrivi 8 brevi titoli di massimo 6 parole di punti fondamentali da trattare in una lezione su {topic_name}. È importante che compaiano sempre i termini: {topic_name}."
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -49,13 +50,14 @@ def generate_powerpoint_and_image():
     with open('topics.txt', 'w') as f:
         f.write(topic_prompts)
 
-    # Generate the slides contents using the OpenAI GPT-3 API - Translate prompt in your own language
+    # Generate slides contents using OpenAI GPT-3 API
     
     with open('topics.txt', 'r') as f:
         topics = f.read().splitlines()
 
     lists = []
     for topic in topics:
+        # Summarize in 6 points and using a minimum of fifteen words the most important aspects of the following topic: {topic}. Do not add warnings and write only the list.
         prompt = f"Riassumi in 6 punti e usando MINIMO QUINDICI PAROLE gli aspetti più importanti del seguente argomento: {topic}\nNon aggiungere avvisi e scrivi solo l'elenco."
         response = openai.Completion.create(
             engine="text-davinci-003",
@@ -68,7 +70,7 @@ def generate_powerpoint_and_image():
         text = response.choices[0].text.strip()
         lists.append((topic, text))
 
-    # Create a new PowerPoint presentation from the template
+    # Create a new PowerPoint presentation from template
     prs = Presentation(template_path)
     
     for topic, text in lists:
@@ -93,7 +95,7 @@ def generate_powerpoint_and_image():
             p.font.size = Inches(0.35)
             p.font.color.rgb = RGBColor(0, 0, 0)
 
-    # Save the PowerPoint presentation to desktop - you may want to customize
+    # Save PowerPoint presentation to desktop - you may want to customize
     pptx_filename = f"/home/gat/Scrivania/{topic_entry.get()}.pptx"
     prs.save(pptx_filename)
     # Generate an image using the DALL-E API
@@ -121,11 +123,11 @@ def generate_powerpoint_and_image():
     with open(image_filename, "wb") as f:
         f.write(image_content)
         
-# Create the main window
+# Create main window
 window = tk.Tk()
 window.title("G-PoinT")
 
-# Create a label for the topic entry
+# Create a label for topic entry
 topic_label = tk.Label(window, text="Argomento della presentazione:")
 topic_label.pack()
 
