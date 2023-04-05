@@ -8,20 +8,18 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from PIL import Image
-
-# Import the OpenAI API and set the API key
 import openai
-openai.api_key = "YOUR API KEY"
 
-# Set the path for the template PowerPoint file
-template_path = "/home/gat/ppt/template.pptx"
+# Set API key
 
-# Define a function to generate the PowerPoint presentation and image
+openai.api_key = "YOUR API KEY" # <--- Customize!
+
+# Path of PowerPoint template file
+
+template_path = "./template.pptx" # <--- now is set to script path.
+
 def generate_powerpoint_and_image():
-    # Get the topic name from the input field
     topic_name = topic_entry.get()
-
-    # Translate topic name to English using GPT for DALL-E prompt
     prompt = f"Translate {topic_name} to English."
     response = openai.Completion.create(
         engine="text-davinci-002",
@@ -33,8 +31,9 @@ def generate_powerpoint_and_image():
     )
     topic_name_en = response.choices[0].text.strip()
     
-   # Generate 8 key points to use as slides title and topic for slides
+   # Generate 8 key points to use as slides titles and topics
    # In english: Write 8 short titles of maximum 6 words on key points to be covered in a lesson on {topic_name}. It is important that the terms {topic_name} always appear.
+
     prompt = f"Scrivi 8 brevi titoli di massimo 6 parole di punti fondamentali da trattare in una lezione su {topic_name}. È importante che compaiano sempre i termini: {topic_name}."
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -46,18 +45,18 @@ def generate_powerpoint_and_image():
     )
     topic_prompts = response.choices[0].text.strip()
 
-    # Save to a text file
     with open('topics.txt', 'w') as f:
         f.write(topic_prompts)
 
-    # Generate slides contents using OpenAI GPT-3 API
-    
     with open('topics.txt', 'r') as f:
         topics = f.read().splitlines()
 
     lists = []
     for topic in topics:
-        # Summarize in 6 points and using a minimum of fifteen words the most important aspects of the following topic: {topic}. Do not add warnings and write only the list.
+        
+        # Generate slide contents
+        # In English: Summarize in 6 points and using a minimum of fifteen words the most important aspects of the following topic: {topic}. Do not add warnings and write only the list.
+
         prompt = f"Riassumi in 6 punti e usando MINIMO QUINDICI PAROLE gli aspetti più importanti del seguente argomento: {topic}\nNon aggiungere avvisi e scrivi solo l'elenco."
         response = openai.Completion.create(
             engine="text-davinci-003",
@@ -70,7 +69,6 @@ def generate_powerpoint_and_image():
         text = response.choices[0].text.strip()
         lists.append((topic, text))
 
-    # Create a new PowerPoint presentation from template
     prs = Presentation(template_path)
     
     for topic, text in lists:
@@ -80,7 +78,6 @@ def generate_powerpoint_and_image():
         title_shape.text = topic
         title_shape.text_frame.paragraphs[0].font.bold = True
         title_shape.text_frame.paragraphs[0].font.size = Pt(42)
-
         left = Inches(1)
         top = Inches(2.5)
         width = Inches(9)
@@ -95,10 +92,9 @@ def generate_powerpoint_and_image():
             p.font.size = Inches(0.35)
             p.font.color.rgb = RGBColor(0, 0, 0)
 
-    # Save PowerPoint presentation to desktop - you may want to customize
-    pptx_filename = f"/home/gat/Scrivania/{topic_entry.get()}.pptx"
+    # Save PowerPoint file and image in script folder - you may want to customize pptx_filename path 
+    pptx_filename = f"./{topic_entry.get()}.pptx" # <--- set custom path.
     prs.save(pptx_filename)
-    # Generate an image using the DALL-E API
 
     image_url = "https://api.openai.com/v1/images/generations"
     prompt = f"a portrait photo of {topic_name_en}, detailed, cgi, octane, unreal"
@@ -106,7 +102,7 @@ def generate_powerpoint_and_image():
         "model": "image-alpha-001",
         "prompt": prompt,
         "num_images": 1,
-        "size": "1024x1024",
+        "size": "1024x1024", # <--- set custom size
         "response_format": "url"
     }
     headers = {
@@ -117,28 +113,23 @@ def generate_powerpoint_and_image():
     response.raise_for_status()
     image_url = response.json()["data"][0]["url"]
     image_content = requests.get(image_url).content
-
-    # Save the image to a file in desktop
     image_filename = os.path.splitext(pptx_filename)[0] + ".png"
     with open(image_filename, "wb") as f:
         f.write(image_content)
         
-# Create main window
+# Create GUI window
 window = tk.Tk()
 window.title("G-PoinT")
 
-# Create a label for topic entry
+# Label for topic entry
 topic_label = tk.Label(window, text="Argomento della presentazione:")
 topic_label.pack()
-
-# Create a text entry for the topic
 topic_entry = tk.Entry(window)
 topic_entry.pack()
 
-# Create a button to generate the PowerPoint and image
+# Button to generate PowerPoint and image
 generate_button = tk.Button(window, text="Genera file PowerPoint e immagine", command=generate_powerpoint_and_image)
 generate_button.pack()
 
-# Start the main event loop
 window.mainloop()
 
