@@ -33,7 +33,7 @@ def generate_powerpoint_and_image():
     )
     topic_name_en = response.choices[0].text.strip()
     
-   # Generazione dei 8 brevi titoli di punti fondamentali
+   # Generate 8 key points to use as slides
     prompt = f"Scrivi 8 brevi titoli di massimo 6 parole di punti fondamentali da trattare in una lezione su {topic_name}. È importante che compaiano sempre i termini: {topic_name}."
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -45,11 +45,11 @@ def generate_powerpoint_and_image():
     )
     topic_prompts = response.choices[0].text.strip()
 
-    # Save the bullet points to a text file
+    # Save to a text file
     with open('topics.txt', 'w') as f:
         f.write(topic_prompts)
 
-    # Generate the bullet point lists using the OpenAI GPT-3 API - Translate prompt in your own language
+    # Generate the slides contents using the OpenAI GPT-3 API - Translate prompt in your own language
     
     with open('topics.txt', 'r') as f:
         topics = f.read().splitlines()
@@ -93,7 +93,7 @@ def generate_powerpoint_and_image():
             p.font.size = Inches(0.35)
             p.font.color.rgb = RGBColor(0, 0, 0)
 
-    # Save the PowerPoint presentation
+    # Save the PowerPoint presentation to desktop - you may want to customize
     pptx_filename = f"/home/gat/Scrivania/{topic_entry.get()}.pptx"
     prs.save(pptx_filename)
     # Generate an image using the DALL-E API
@@ -116,13 +116,11 @@ def generate_powerpoint_and_image():
     image_url = response.json()["data"][0]["url"]
     image_content = requests.get(image_url).content
 
-    # Save the image to a file
+    # Save the image to a file in desktop
     image_filename = os.path.splitext(pptx_filename)[0] + ".png"
     with open(image_filename, "wb") as f:
         f.write(image_content)
-    
-    # Close the window window.destroy()
-    
+        
 # Create the main window
 window = tk.Tk()
 window.title("G-PoinT")
