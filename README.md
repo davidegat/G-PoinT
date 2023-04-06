@@ -1,5 +1,5 @@
 # G-PoinT
-Uses Python and GPT to generate a full PowerPoint file with slides and text, and DALL-E to get one image to associate. Released AS-IS: you need to translate some GUI parts in your language (currently italian) and customize paths, code is commented with english prompts and indications where needed.
+Uses Python and GPT to generate a full PowerPoint file with slides and text, and DALL-E to get one image to associate. Released AS-IS: you need to translate some GUI parts in your language (currently italian) and customize paths, code is commented with english prompts and instructions where needed.
 
 <li>Built on Linux Ubuntu, Python 3, uses Tkinter GUI for topic input.
 <li>Image will be placed in same path you choose for PPTX file.
