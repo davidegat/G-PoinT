@@ -17,6 +17,11 @@ Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasona
 <br><br>
 This repository contains <b>examples of output</b>, and an <b>example template</b> you can customize.<br><br>
 To get different results (more slides, more text, specific contexts) modify the prompt sent to GPT. Try different prompts, temp, tokens for fine-tuned results. If you want more realistic, artistic or other style for images, modify DALL-E prompt accordingly. See comments for details.
+
+<video width="320" height="240" controls>
+  <source src="https://github.com/davidegat/G-PoinT/raw/main/G-Point.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <h3>What it does?</h3>
 
 <li>Shows Tkinter GUI and asks for a topic
