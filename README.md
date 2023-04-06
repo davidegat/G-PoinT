@@ -32,7 +32,7 @@ The following video shows process in real time, wait till files are done or skip
 <li>Asks DALL-E for an image using topic in english
 <li>Saves both PPTX and PNG files.
 <li>First slide will be empty for user customization.
-<br><br>
+
 
 <h3>Dependencies and requirements</h3>
 
