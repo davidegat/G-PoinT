@@ -4,7 +4,6 @@ Uses Python and GPT to generate a full PowerPoint file with slides and text, and
 <li>Built on Linux Ubuntu, Python 3, uses Tkinter GUI for topic input.
 <li>Image will be placed in same path you choose for PPTX file.
 <li>Needs a PowerPoint template file (example included).
-<li>First slide will be empty for user customization.
 <li>Remember to edit with your API key and paths.
   
 <h3>What it does?</h3>
@@ -15,7 +14,10 @@ Uses Python and GPT to generate a full PowerPoint file with slides and text, and
 <li>Creates a PPTX file with key points as slide titles, and fills them with generated text
 <li>Translates topic from whatever language to english (also via GPT prompt)
 <li>Asks DALL-E for an image using topic in english
-<li>Saves both PPTX and PNG files.<br><br>
+<li>Saves both PPTX and PNG files.
+<li>First slide will be empty for user customization.
+<br><br>
+
 Run GUI with:<br><br>
 <code>python3 ./pptgui.py</code><br><br>
 Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder.
@@ -32,5 +34,4 @@ Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasona
 To install the external dependencies, you can use pip:<br><br>
 <code>pip install python-pptx requests Pillow openai</code><br><br>
 Please note that the script assumes you have a compatible version of Python 3 (preferably Python 3.6 or later) installed on your system. Additionally, the script relies on having access to the OpenAI API key, which you'll need to sign up for.
-<br><br>
-Not professional. Not perfect.
+<h3>Not professional. Not perfect.</h3>
