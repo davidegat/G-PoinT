@@ -3,15 +3,9 @@ Uses Python and GPT to generate a full PowerPoint file with slides and text, and
 
 <li>Built on Linux Ubuntu, Python 3, uses Tkinter GUI for topic input.
 <li>Image will be placed in same path you choose for PPTX file.
-<li>Needs a PowerPoint template file in the script folder (example included).
+<li>Needs a PowerPoint template file (example included).
 <li>First slide will be empty for user customization.
 <li>Remember to edit with your API key and paths.
-
-<h3>Python3 dependencies</h3>
-<li>Pillow
-<li>pptx
-<li>requests
-<li>openai
   
 <h3>What it does?</h3>
 <li>Shows Tkinter GUI and asks for a topic
@@ -23,4 +17,17 @@ Uses Python and GPT to generate a full PowerPoint file with slides and text, and
 <li>Asks DALL-E for an image using topic in english
 <li>Saves both PPTX and PNG files.
 
+<h3>Dependencies and requirements</h3>
+
+<li>os - a built-in Python library for interacting with the operating system.
+<li>tkinter - a built-in Python library for creating graphical user interfaces (GUIs).
+<li>pptx - a Python library for creating and updating PowerPoint (.pptx) files.
+<li>requests - a popular Python library for making HTTP requests.
+<li>PIL (Python Imaging Library) - an open-source Python library for adding image processing capabilities to your Python interpreter.
+<li>openai - the official Python library for the OpenAI API, used to interact with OpenAI services like GPT-3 and DALL-E.
+
+To install the external dependencies, you can use pip:
+<code>pip install python-pptx requests Pillow openai</code>
+Please note that the script assumes you have a compatible version of Python 3 (preferably Python 3.6 or later) installed on your system. Additionally, the script relies on having access to the OpenAI API key, which you'll need to sign up for.
+<br><br>
 Not professional. Not perfect.
