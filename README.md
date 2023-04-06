@@ -15,7 +15,10 @@ Uses Python and GPT to generate a full PowerPoint file with slides and text, and
 <li>Creates a PPTX file with key points as slide titles, and fills them with generated text
 <li>Translates topic from whatever language to english (also via GPT prompt)
 <li>Asks DALL-E for an image using topic in english
-<li>Saves both PPTX and PNG files.
+<li>Saves both PPTX and PNG files.<br><br>
+Run GUI with:<br><br>
+<code>python3 ./pptgui.py</code><br><br>
+Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder.
 
 <h3>Dependencies and requirements</h3>
 
