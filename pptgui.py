@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 
 import os
+import requests
+import openai
 import tkinter as tk
+from io import BytesIO
 from pptx import Presentation
 from pptx.util import Inches, Pt
-import requests
-from io import BytesIO
 from pptx.dml.color import RGBColor
-
-# Import OpenAI API
-import openai
 
 # Set your API key and paths for template PowerPoint and output directory
 openai.api_key = "your_api_key"
@@ -32,7 +30,7 @@ def generate_powerpoint_and_image():
         temperature=0.7,
     )
     topic_name_en = response.choices[0].text.strip()
-   # Generate 8 key points to use as slides titles and topics
+   # Generate 8 key points to use as slides titles and topics (customize prompt as you like)
    # In english: Write 8 short titles of maximum 6 words on key points to be covered in a lesson on {topic_name}. It is important that terms {topic_name} always appear.
     prompt = f"Scrivi 8 brevi titoli di massimo 6 parole di punti fondamentali da trattare in una lezione su {topic_name}. È importante che compaiano sempre i termini: {topic_name}."
     response = openai.Completion.create(
@@ -55,8 +53,8 @@ def generate_powerpoint_and_image():
 
     lists = []
     for topic in topics:
-    # Generate slide contents
-    # In English: Summarize in 6 points and using a minimum of fifteen words most important aspects of following topic: {topic}. Do not add warnings and write only list.
+    # Generate slide contents (customize prompt as you like)
+    # In English: Summarize in 6 points and using a minimum of fifteen words the most important aspects of following topic: {topic}. Do not add warnings and write only list.
         prompt = f"Riassumi in 6 punti e usando MINIMO QUINDICI PAROLE gli aspetti più importanti del seguente argomento: {topic}\nNon aggiungere avvisi e scrivi solo l'elenco."
         response = openai.Completion.create(
             engine="text-davinci-003",
@@ -98,7 +96,7 @@ def generate_powerpoint_and_image():
     pptx_filename = os.path.join(output_directory, f"{topic_entry.get()}.pptx")
     prs.save(pptx_filename)
 
-    # Generate an image using DALL-E API
+    # Generate an image using DALL-E API (customize prompt as you like)
     image_url = "https://api.openai.com/v1/images/generations"
     prompt = f"a portrait photo of {topic_name_en}, detailed, cgi, octane, unreal"
     payload = {
@@ -122,7 +120,8 @@ def generate_powerpoint_and_image():
     with open(image_filename, "wb") as f:
         f.write(image_content)
     
-    # Close window window.destroy()
+    # Uncomment next line to exit script right after generation
+    # window.destroy()
 
 # Create main window
 window = tk.Tk()
