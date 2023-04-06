@@ -12,14 +12,9 @@ from pptx.dml.color import RGBColor
 import openai
 
 # Set your API key and paths for the template PowerPoint and output directory
-# openai.api_key = "your_api_key"
-# template_path = "/path/to/your/template.pptx"
-# output_directory = "/path/to/your/output/directory"
-template_path = "/home/gat/Scrivania/template.pptx"
-output_directory = "/home/gat/Scrivania/"
-
-# Set the OpenAI API key
-openai.api_key = "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"
+openai.api_key = "your_api_key"
+template_path = "/path/to/your/template.pptx"
+output_directory = "/path/to/your/output/directory"
 
 # Define a function to generate the PowerPoint presentation and image
 def generate_powerpoint_and_image():
