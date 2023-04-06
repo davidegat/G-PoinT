@@ -26,7 +26,7 @@ Uses Python and GPT to generate a full PowerPoint file with slides and text, and
 <li>PIL (Python Imaging Library) - an open-source Python library for adding image processing capabilities to your Python interpreter.
 <li>openai - the official Python library for the OpenAI API, used to interact with OpenAI services like GPT-3 and DALL-E.
 
-To install the external dependencies, you can use pip:<br><<br>
+To install the external dependencies, you can use pip:<br><br>
 <code>pip install python-pptx requests Pillow openai</code><br><br>
 Please note that the script assumes you have a compatible version of Python 3 (preferably Python 3.6 or later) installed on your system. Additionally, the script relies on having access to the OpenAI API key, which you'll need to sign up for.
 <br><br>
