@@ -122,7 +122,7 @@ def generate_powerpoint_and_image():
         f.write(image_content)
     
     # Uncomment next line to exit script right after generation
-    # window.destroy()
+    #window.destroy()
 
 # Create main window
 window = tk.Tk()
