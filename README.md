@@ -24,6 +24,8 @@ Run GUI with:<br><br>
 Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder.   <b>It may take up to minute to generate both PowerPoint and image!</b>
 <br><br>
 <img src="https://github.com/davidegat/G-PoinT/blob/main/gpoint.png?raw=true"></img>
+<br><br>
+To get different results (more slides, more text, specific contexts) modify the prompt sent to GPT. Try different prompts, temp, tokens for fine-tuned results. If you want more realistic, artistic or other style for images, modify DALL-E prompt accordingly. See comments for details.
 
 <h3>Dependencies and requirements</h3>
 
