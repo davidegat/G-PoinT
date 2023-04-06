@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=G-PoinT
+Exec=/path/to/pptgui.py
+Terminal=false
+Categories=Utility;
+Name[it_CH]=G-PoinT
+Path=/path/of/script/
+StartupNotify=true
+Icon=face-cool
