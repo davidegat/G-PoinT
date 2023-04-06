@@ -5,7 +5,17 @@ This software employs Python and GPT to create a <b>complete</b> PowerPoint file
 <li>Image will be placed in same path you choose for PPTX file.
 <li>Needs a PowerPoint template file (example included).
 <li>Remember to edit with your API key and paths.
-  
+<h3>How to install and run</h3>
+Install with:<br>br>
+<code>git clone https://github.com/davidegat/G-PoinT.git</code><br>br>
+Run GUI with:<br><br>
+<code>cd G-PoinT
+python3 ./pptgui.py</code><br><br>
+Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder.   <b>It may take up to one minute to generate both PowerPoint and image!</b>
+<br><br>
+<img src="https://github.com/davidegat/G-PoinT/blob/main/gpoint.png?raw=true"></img>
+<br><br>
+To get different results (more slides, more text, specific contexts) modify the prompt sent to GPT. Try different prompts, temp, tokens for fine-tuned results. If you want more realistic, artistic or other style for images, modify DALL-E prompt accordingly. See comments for details.
 <h3>What it does?</h3>
 
 <li>Shows Tkinter GUI and asks for a topic
@@ -18,14 +28,6 @@ This software employs Python and GPT to create a <b>complete</b> PowerPoint file
 <li>Saves both PPTX and PNG files.
 <li>First slide will be empty for user customization.
 <br><br>
-
-Run GUI with:<br><br>
-<code>python3 ./pptgui.py</code><br><br>
-Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder.   <b>It may take up to one minute to generate both PowerPoint and image!</b>
-<br><br>
-<img src="https://github.com/davidegat/G-PoinT/blob/main/gpoint.png?raw=true"></img>
-<br><br>
-To get different results (more slides, more text, specific contexts) modify the prompt sent to GPT. Try different prompts, temp, tokens for fine-tuned results. If you want more realistic, artistic or other style for images, modify DALL-E prompt accordingly. See comments for details.
 
 <h3>Dependencies and requirements</h3>
 
