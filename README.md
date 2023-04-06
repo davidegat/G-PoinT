@@ -1,4 +1,4 @@
-# G-Point
+# G-PoinT
 ![gpoint](https://user-images.githubusercontent.com/51516281/230445369-7ec377ca-d642-4dce-aebd-b1b3e2b7c6d6.png)
 <br>
 This software employs Python3 and GPT to create a <b>complete</b> PowerPoint file, including slides and text, <b>from a single topic input</b>. DALL-E is used to generate and download an appropriate image to use within the presentation. Released AS-IS: you will just need to translate GUI in your language (currently italian) and customize paths, code is adeguately commented, with english prompts and instructions where needed.
