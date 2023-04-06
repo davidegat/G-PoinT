@@ -17,7 +17,7 @@ Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasona
 <br><br>
 This repository contains <b>examples of output</b>, and an <b>example template</b> you can customize.<br><br>
 To get different results (more slides, more text, specific contexts) modify the prompt sent to GPT. Try different prompts, temp, tokens for fine-tuned results. If you want more realistic, artistic or other style for images, modify DALL-E prompt accordingly. See comments for details.<br><br>
-The following video shows the process in real time, wait till the files are done or skip from 0:15 to 0:55.
+The following video shows the process in real time, wait till the files are done or skip from 0:15 to 0:55.<br><br>
 
 [https://github.com/davidegat/G-PoinT/raw/main/G-Point.mp4](https://user-images.githubusercontent.com/51516281/230441862-0ee64ad7-b564-49d1-beba-8e0fb085b885.mp4)
 
