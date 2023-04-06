@@ -9,7 +9,7 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 
-# Set your API key and paths for template PowerPoint and output directory
+# Set your API key and paths for PowerPoint template and output directory
 openai.api_key = "your_api_key"
 template_path = "/path/to/your/template.pptx"
 output_directory = "/path/to/your/output/directory"
@@ -19,7 +19,7 @@ def generate_powerpoint_and_image():
     # Get topic name from input field
     topic_name = topic_entry.get()
 
-    # Translate topic name to English using GPT for DALL-E prompt
+    # Translate topic to English with GPT, to write DALL-E prompt later
     prompt = f"Translate {topic_name} to English."
     response = openai.Completion.create(
         engine="text-davinci-002",
@@ -30,7 +30,8 @@ def generate_powerpoint_and_image():
         temperature=0.7,
     )
     topic_name_en = response.choices[0].text.strip()
-   # Generate 8 key points to use as slides titles and topics (customize prompt as you like)
+   # Generate 8 key points to use as slides titles and topics (customize prompt as you like, more points more slides)
+   # and to generate slide content later
    # In english: Write 8 short titles of maximum 6 words on key points to be covered in a lesson on {topic_name}. It is important that terms {topic_name} always appear.
     prompt = f"Scrivi 8 brevi titoli di massimo 6 parole di punti fondamentali da trattare in una lezione su {topic_name}. È importante che compaiano sempre i termini: {topic_name}."
     response = openai.Completion.create(
@@ -47,13 +48,12 @@ def generate_powerpoint_and_image():
     with open('topics.txt', 'w') as f:
         f.write(topic_prompts)
 
-    # Generate bullet point lists using OpenAI GPT-3 API
     with open('topics.txt', 'r') as f:
         topics = f.read().splitlines()
 
     lists = []
     for topic in topics:
-    # Generate slide contents (customize prompt as you like)
+    # Generate slide contents (customize prompt as you like, more points means a longer slide text)
     # In English: Summarize in 6 points and using a minimum of fifteen words the most important aspects of following topic: {topic}. Do not add warnings and write only list.
         prompt = f"Riassumi in 6 punti e usando MINIMO QUINDICI PAROLE gli aspetti più importanti del seguente argomento: {topic}\nNon aggiungere avvisi e scrivi solo l'elenco."
         response = openai.Completion.create(
@@ -68,6 +68,7 @@ def generate_powerpoint_and_image():
         lists.append((topic, text))
 
     # Create a new PowerPoint presentation from template
+    # See 'pptx' library documentation for further customization
     prs = Presentation(template_path)
 
     for topic, text in lists:
@@ -96,7 +97,7 @@ def generate_powerpoint_and_image():
     pptx_filename = os.path.join(output_directory, f"{topic_entry.get()}.pptx")
     prs.save(pptx_filename)
 
-    # Generate an image using DALL-E API (customize prompt as you like)
+    # Generate and download an image using DALL-E API using topic in English (customize prompt as you like)
     image_url = "https://api.openai.com/v1/images/generations"
     prompt = f"a portrait photo of {topic_name_en}, detailed, cgi, octane, unreal"
     payload = {
