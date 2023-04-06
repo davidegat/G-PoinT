@@ -15,7 +15,7 @@ Or also:
 <li><code>./pptgui.py</code><br><br>
 Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder. <b>It may take up to one minute to generate both PowerPoint and image!</b>
 <br><br>
-This repository contains <b>examples of output</b>, and an <b>example template</b> you can customize.<br><br>
+This repository contains <b>examples of output</b>, an <b>example template</b> you can customize, and a .desktop file for desktop entry (must be edited).<br><br>
 To get different results (more slides, more text, specific contexts) modify the prompt sent to GPT. Try different prompts, temp, tokens for fine-tuned results. If you want more realistic, artistic or other style for images, modify DALL-E prompt accordingly. See comments for details.<br><br>
 The following video shows process in real time, wait till files are done or skip from 0:15 to 0:55.<br><br>
 
