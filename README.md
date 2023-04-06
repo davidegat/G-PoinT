@@ -21,7 +21,7 @@ This software employs Python and GPT to create a <b>complete</b> PowerPoint file
 
 Run GUI with:<br><br>
 <code>python3 ./pptgui.py</code><br><br>
-Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder.   <b>It may take up to minute to generate both PowerPoint and image!</b>
+Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder.   <b>It may take up to one minute to generate both PowerPoint and image!</b>
 <br><br>
 <img src="https://github.com/davidegat/G-PoinT/blob/main/gpoint.png?raw=true"></img>
 <br><br>
