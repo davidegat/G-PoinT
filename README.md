@@ -16,7 +16,7 @@ Or also:
 Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder. <b>It may take up to one minute to generate both PowerPoint and image!</b>
 <br><br>
 This repository contains <b>examples of output</b>, and an <b>example template</b> you can customize.<br><br>
-To get different results (more slides, more text, specific contexts) modify the prompt sent to GPT. Try different prompts, temp, tokens for fine-tuned results. If you want more realistic, artistic or other style for images, modify DALL-E prompt accordingly. See comments for details.
+To get different results (more slides, more text, specific contexts) modify the prompt sent to GPT. Try different prompts, temp, tokens for fine-tuned results. If you want more realistic, artistic or other style for images, modify DALL-E prompt accordingly. See comments for details.<br><br>
 
 [https://github.com/davidegat/G-PoinT/raw/main/G-Point.mp4](https://user-images.githubusercontent.com/51516281/230441862-0ee64ad7-b564-49d1-beba-8e0fb085b885.mp4)
 
