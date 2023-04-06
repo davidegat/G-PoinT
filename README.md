@@ -7,6 +7,7 @@ This program employs Python and GPT to create a complete PowerPoint presentation
 <li>Remember to edit with your API key and paths.
   
 <h3>What it does?</h3>
+
 <li>Shows Tkinter GUI and asks for a topic
 <li>Sends prompt + topic to GPT
 <li>Gets back 8 key points, each one will be a slide
@@ -21,6 +22,8 @@ This program employs Python and GPT to create a complete PowerPoint presentation
 Run GUI with:<br><br>
 <code>python3 ./pptgui.py</code><br><br>
 Insert a topic and push the generate button (e.g. "Brain Tumor"), wait a reasonable time to get PPTX and PNG outputs directly in custom folder.
+<br><br>
+<img src="https://github.com/davidegat/G-PoinT/blob/main/gpoint.png?raw=true"></img>
 
 <h3>Dependencies and requirements</h3>
 
