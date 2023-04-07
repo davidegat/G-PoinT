@@ -11,7 +11,7 @@ This software uses Python3 and GPT via <a href="https://platform.openai.com/docs
 template_path = "/path/to/your/template.pptx"
 output_directory = "/path/to/your/output/directory"
 english = False</code> if set to True disables topic translation in English before being sent to DALL-E.<br>
-<b>You must always translate prompts in your own language</b> (english prompts already included in comments)<br>
+<b>You must always translate prompts in your own language</b> (english prompts included in comments).<br>
 For further customization, including prompts, look configuration variables at the beginning of the script.<br><br>
 <b>Running and using G-PoinT</b>:<br>
 <code>cd G-PoinT</code><br>
