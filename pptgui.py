@@ -10,26 +10,26 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 
-# --- CONFIGURATION ---
+# --- CONFIGURATION START ---
 
 # Set your API key, and paths for PowerPoint template and output directory.
 openai.api_key = "your_api_key"
 template_path = "/path/to/your/template.pptx"
 output_directory = "/path/to/your/output/directory"
 
-# English Language? set to True. If set to False, use prompts in your language!
+# Set it to true for English. If set to False, you MUST use prompts in your language!
 # See translations.txt for pre-made prompts in different languages.
-english = False
+english = True
 
 if not english:
-# YOU MUST TRANSLATE THIS PROMPT IN YOUR LANGUAGE!
+# YOU MUST TRANSLATE THIS PROMPT IN YOUR LANGUAGE! See translations.txt for pre-made prompts in different languages.
     KEYPOINT_PROMPT = "Scrivi 8 brevi titoli di massimo 6 parole di punti fondamentali da trattare in una lezione su {topic}. È importante che compaiano sempre i termini: {topic}."
 
 if english:
     KEYPOINT_PROMPT = "Write 8 short titles of maximum 6 words on key points to be covered in a lesson on {topic}. It is important that terms {topic} always appear. Write only the list."
 
 if not english:
-# YOU MUST TRANSLATE THIS PROMPT IN YOUR LANGUAGE!
+# YOU MUST TRANSLATE THIS PROMPT IN YOUR LANGUAGE! See translations.txt for pre-made prompts in different languages.
     CONTENT_PROMPT = "Riassumi in 6 punti e usando MINIMO QUINDICI PAROLE gli aspetti più importanti del seguente argomento: {topic}\nNon aggiungere avvisi o altro testo e scrivi solo l'elenco."
 
 if english:
@@ -42,7 +42,7 @@ IMAGE_PROMPT = "a portrait photo of {topic}, detailed, cgi, octane, unreal"
 keypoint_temperature_value = 0.5
 content_temperature_value = 0.7
         
-# Define token length. Determines request and response lenght.
+# Define token length. Determines requests and responses length.
 keypoint_max_tokens=2000
 content_max_tokens=2000
 
