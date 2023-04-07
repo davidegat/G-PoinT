@@ -1,7 +1,7 @@
 # G-PoinT
 ![gpoint](https://user-images.githubusercontent.com/51516281/230445369-7ec377ca-d642-4dce-aebd-b1b3e2b7c6d6.png)
 <br>
-This software uses Python3 and <a href="https://platform.openai.com/docs/api-reference/introduction">GPT API</a> to create a <b>complete</b> PowerPoint file, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download an <b>appropriate image</b> to use within the presentation. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to translate few GUI elements to your language (currently Italian) and customize paths. Code is adequately commented, with English prompts and instructions provided where necessary. 
+This software uses Python3 and <a href="https://platform.openai.com/docs/api-reference/introduction">GPT API</a> to create a <b>complete</b> PowerPoint file from template, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download an <b>appropriate image</b> to use within the presentation. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to translate few GUI elements to your language (currently Italian) and customize paths. Code is adequately commented, with English prompts and instructions provided where necessary. 
 
 <h3>Install, configure and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code><br>
