@@ -23,9 +23,9 @@ language = "English"
 # If you are not using English, set to False to translate prompt for DALL-E
 english = True
 
-KEYPOINT_PROMPT = "Write 8 short titles of maximum 6 words on key points to be covered in a lesson on {topic}. It is important that terms {topic} always appear. Write ONLY the list and ONLY in {language} language."
+KEYPOINT_PROMPT = "Write 8 short titles of maximum 6 words on key points to be covered in a lesson about topic: {topic}. It is important that terms {topic} always appear. From now on we will interact ONLY in good {language} language."
 
-CONTENT_PROMPT = "Summarize in 6 points and using a minimum of fifteen words the most important aspects of following topic: {topic}.\nShow me ONLY the list and no other text or explanation and ONLY in {language} language."
+CONTENT_PROMPT = "Summarize in 6 points and using at least 10 words the most important aspects of following topic: {topic}.\nShow me ONLY the list and no other text. From now on we will interact ONLY in good {language} language."
 
 # Picture prompt. Change last part to your favourite style, MUST be in English.
 IMAGE_PROMPT = "a portrait photo of {topic}, detailed, cgi, octane, unreal"
