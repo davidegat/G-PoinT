@@ -5,7 +5,7 @@ This software uses Python3 and GPT to create a <b>complete</b> PowerPoint file, 
 
 <h3>Install and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code><br>
-<b>Dependencies</b>: <code>pip install python-pptx requests Pillow openai</code><br><br>
+<b>Dependencies</b>: <code>pip install python-pptx requests Pillow openai</code><br>
 <b>Configuration</b>: edit pptgui.py to change paths and OpenAI API KEY<br>
 <code>openai.api_key = "your_api_key"
 template_path = "/path/to/your/template.pptx"
@@ -18,10 +18,10 @@ Or also:
 <li><code>chmode +x ./pptgui.py</code> (only once)
 <li><code>./pptgui.py</code><br><br>
 
-Insert a topic and click on the generate button (for example, "Brain Tumor"), and wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder. <b>Please note that it may take up to one minute to generate both PowerPoint and image!</b><br><br>
+Insert a topic and click on generate button (for example, "Brain Tumor"), wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder. <b>Please note that it may take up to one minute to generate both PowerPoint and image!</b><br><br>
 This repository contains <b>examples of output</b>, an <b>example template</b> you can customize, and a <b>.desktop file</b> for desktop entry (which must be edited).<br><br>
-To obtain different results (more slides, more text, specific contexts), modify the prompt sent to GPT. Try different prompts, temperatures, and tokens for fine-tuned results. If you want more realistic, artistic, or other styles for images, modify DALL-E prompt accordingly. Please refer to the comments for details.<br><br>
-The following video shows the process in real time. Please wait until the files are complete, or skip to 0:55 from 0:15.
+To obtain different results (more slides, more text, specific contexts), modify the prompt sent to GPT. Try different prompts, temperatures, and tokens for fine-tuned results. If you want more realistic, artistic, or other styles for images, modify DALL-E prompt accordingly. Please refer to comments for details.<br><br>
+The following video shows process in real time. Please wait until files are complete, or skip to 0:55 from 0:15.
 
 [https://github.com/davidegat/G-PoinT/raw/main/G-Point.mp4](https://user-images.githubusercontent.com/51516281/230441862-0ee64ad7-b564-49d1-beba-8e0fb085b885.mp4)
 
