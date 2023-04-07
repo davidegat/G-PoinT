@@ -34,7 +34,7 @@ https://user-images.githubusercontent.com/51516281/230659957-7a52ab80-0148-4343-
 <li>Creates a PPTX file from template with key points as slide titles, and fills them with generated text
 <li>Translates topic from whatever language to english (also via GPT prompt)
 <li>Asks DALL-E for images using topic in english
-<li>Saves both PPTX and PNG files.
+<li>Saves PPTX and PNG files.
 <li>First slide will be empty for user customization.
 
 
