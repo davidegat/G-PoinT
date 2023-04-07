@@ -12,15 +12,14 @@ from pptx.dml.color import RGBColor
 
 # --- CONFIGURATION ---
 
-# English Language? set to True. Remember to use English prompt instead!
-english = False
-
 # Set your API key, and paths for PowerPoint template and output directory.
 openai.api_key = "your_api_key"
 template_path = "/path/to/your/template.pptx"
 output_directory = "/path/to/your/output/directory"
 
-# Define prompts text (keypoint_prompt = slides number and titles, content_prompt = slides content).
+# English Language? set to True. If set to False, use prompts in your language!
+# See translations.txt for pre-made prompts in different languages.
+english = False
 
 if not english:
 # YOU MUST TRANSLATE THIS PROMPT IN YOUR LANGUAGE!
@@ -36,6 +35,7 @@ if not english:
 if english:
     CONTENT_PROMPT = "Summarize in 6 points and using a minimum of fifteen words the most important aspects of following topic: {topic}.\nShow me ONLY the list and no other text or explanation."
 
+# Picture prompt. Change last part to your favourite style, MUST be in English.
 IMAGE_PROMPT = "a portrait photo of {topic}, detailed, cgi, octane, unreal"
 
 # Define temperature value. Determines GPT randomness.
