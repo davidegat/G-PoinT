@@ -21,9 +21,9 @@ This repository contains <b>examples of output</b> and an <b>example template</b
 <h3>Results from GPT and DALL-E</h3>
 To obtain different results (more slides, more text, specific contexts), modify the <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt</a> at the beginning of the script directly. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for image generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements, or if you want to include image directly into presentation.<br><br>
 <b>Please note</b>: script actually works well generating 8 slides made of 6 key points each. If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the <a href="https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature">temperature</a> parameters, you should check for apropriate <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">token size</a> an be ready to wait <b>longer generation times</b>.<br><br>
-<b>The following video shows process in real time (older version).</b> Please wait until files are complete, or skip from 0:15 to 0:55.<br><br>
+<b>The following video shows process in real time (3 images generated).</b> Please wait until files are completely generated, or skip from 0:25 to 0:43.<br><br>
 
-[https://github.com/davidegat/G-PoinT/raw/main/G-Point.mp4](https://user-images.githubusercontent.com/51516281/230441862-0ee64ad7-b564-49d1-beba-8e0fb085b885.mp4)
+https://user-images.githubusercontent.com/51516281/230659957-7a52ab80-0148-4343-bf8c-cbadd85c8603.mp4
 
 <h3>What it does?</h3>
 
