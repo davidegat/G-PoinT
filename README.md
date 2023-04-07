@@ -51,7 +51,9 @@ Please note that the script assumes you have a Linux box and compatible version 
 <li>Generate more images, allowing to choose the best ones.
 <li>Insert image(s) in PPTX directly.
 <li>Move prompts to external files for easier customization.
+<li>Count token used with each model, and inform user on costs for each generation.
 <li>Other platform (e.g. Windows) testing.
+<br><b>Contributions and other ideas are welcome!</b>
 
 <h3>Not professional. Not perfect.</h3>
 G-PoinT is not a substitute for a real person in terms of content, but if you know what to do with prompts you could get good starting points to speed up your workflow, and get inspired. Try to play around with templates and pptx library for more impressive, yet not perfect, graphic results.
