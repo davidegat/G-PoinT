@@ -48,6 +48,7 @@ To obtain different results (more slides, more text, specific contexts), modify 
 
 Please note that the script assumes you have a Linux box and compatible version of Python 3 installed on your system (tested on Python 3.8.10). Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for.
 <h3>TO-DO</h3>
+<li>Full English translation or multilanguage (maybe via GPT itself).
 <li>Generate more images, allowing to choose the best ones.
 <li>Insert image(s) in PPTX directly.
 <li>Move prompts to external files for easier customization.
