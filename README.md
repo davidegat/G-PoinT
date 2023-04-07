@@ -10,7 +10,7 @@ This software uses Python3 and GPT via <a href="https://platform.openai.com/docs
 <code>openai.api_key = "your_api_key"
 template_path = "/path/to/your/template.pptx"
 output_directory = "/path/to/your/output/directory"</code><br>
-<code>english = True</code> - For DALL-E prompt translation, set it to False if presentation is NOT in English.<br>
+<code>english = True</code> - For DALL-E prompt translation, set it to False if language is NOT in English.<br>
 <code>language = "English"</code> - Set output language (any language understood by GPT).<br>
 For further configurations, look variables and comments at the beginning of the script.<br><br>
 <b>Running and using G-PoinT</b>:<br>
