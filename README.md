@@ -6,6 +6,10 @@ This software uses Python3 and GPT to create a <b>complete</b> PowerPoint file, 
 <h3>Install and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code><br>
 <b>Dependencies</b>: <code>pip install python-pptx requests Pillow openai</code><br><br>
+<b>Configuration</b>: edit pptgui.py to change paths and OpenAI API KEY<br>
+<code>openai.api_key = "your_api_key"
+template_path = "/path/to/your/template.pptx"
+output_directory = "/path/to/your/output/directory"</code><br><br>
 <b>Running G-PoinT</b>:<br>
 <li><code>cd G-PoinT</code><br>
 <li><code>python3 ./pptgui.py</code><br>
