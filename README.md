@@ -12,11 +12,11 @@ template_path = "/path/to/your/template.pptx"
 output_directory = "/path/to/your/output/directory"</code><br><br>
 <b>Running and using G-PoinT</b>:<br>
 <code>cd G-PoinT</code><br>
-<code>python3 ./pptgui.py</code><br><br>
-You can use the included G-PoinT.desktop file and access GUI via desktop, remember to edit paths accordingly and make it executable: <code>chmod +x G-PoinT.desktop</code>
+<code>python3 ./pptgui.py</code><br>
+You can use the included G-PoinT.desktop file and access GUI via desktop, remember to edit paths accordingly and make it executable: <code>chmod +x G-PoinT.desktop</code><br><br>
 
 Insert a topic and click on generate button (for example, "Brain Tumor"), wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder. <b>Please note that it may take up to one minute to generate both PowerPoint and image!</b><br><br>
-This repository contains <b>examples of output</b>, an <b>example template</b> you can customize.<br><br>
+This repository contains <b>examples of output</b>, an <b>example template</b> you can customize.
 <h3>Results from GPT and DALL-E</h3>
 To obtain different results (more slides, more text, specific contexts), modify the prompt sent to GPT into the script directly. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for image generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements, or if you want to include image directly into presentation.<br><br>
 <b>The following video shows process in real time.</b> Please wait until files are complete, or skip from 0:15 to 0:55.<br><br>
