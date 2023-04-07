@@ -11,7 +11,7 @@ This software uses Python3 and GPT via <a href="https://platform.openai.com/docs
 template_path = "/path/to/your/template.pptx"
 output_directory = "/path/to/your/output/directory"
 english = False</code> Set to True if your content will be in English, keep it to False for any other language.
-<b>If set to false you must translate prompts in your own language</b><br>
+<b>If set to false you must translate prompts in your own language</b>, check translations.txt file for some pre-made prompts in different languages.<br>
 For further customization, including prompts translation, look configuration variables and comments at the beginning of the script.<br><br>
 <b>Running and using G-PoinT</b>:<br>
 <code>cd G-PoinT</code><br>
