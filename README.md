@@ -1,7 +1,7 @@
 # G-PoinT
 ![gpoint](https://user-images.githubusercontent.com/51516281/230681564-354cb7db-9330-4524-9ec2-efb2fe96c485.png)
 <br><br>
-This software uses Python3 and GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file from template, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one (or more) <b>appropriate image(s)</b> to use within the presentation. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to configure and customize paths. Code is adequately commented, with instructions provided where necessary. 
+This software uses Python3 and GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one (or more) <b>appropriate image(s)</b> to use within the presentation. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to configure and customize paths. Code is adequately commented, with instructions provided where necessary. 
 
 <h3>Install, configure and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>. Check Releases for compressed archives.<br><br>
@@ -9,9 +9,9 @@ This software uses Python3 and GPT via <a href="https://platform.openai.com/docs
 <b>Mandatory pptgui.py configuration</b>:<br>
 <code>openai.api_key = "your_api_key"
 template_path = "/path/to/your/template.pptx"
-output_directory = "/path/to/your/output/directory"
-english = False</code> Set to True if your presentation content will be in English, keep it to False for any other language.
-<b>If English is set to False, you must use prompts written in your own language</b>, check <a href="https://github.com/davidegat/G-PoinT/blob/main/translations.txt">translations.txt</a> file for some pre-made prompts in different languages, or translate it yourself.<br>
+output_directory = "/path/to/your/output/directory"</code><br>
+<code>english = False</code> - For DALL-E prompt translation, set it to True ONLY if presentation is in English.<br>
+<code>language = French</code> - Set output language (any language understood by GPT).<br>
 For further configurations, look variables and comments at the beginning of the script.<br><br>
 <b>Running and using G-PoinT</b>:<br>
 <code>cd G-PoinT</code><br>
