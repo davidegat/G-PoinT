@@ -34,8 +34,8 @@ https://user-images.githubusercontent.com/51516281/230659957-7a52ab80-0148-4343-
 <li>Gets back 8 key points, each one will be a slide
 <li>Sends one prompt for each key point to generate slide content text
 <li>Creates a PPTX file from template with key points as slide titles, and fills them with generated text
-<li>Translates topic from whatever language to english (also via GPT prompt)
-<li>Asks DALL-E for images using topic in english
+<li>Translates topic from whatever language to English (also via GPT prompt - if not already in English).
+<li>Asks DALL-E for images using topic in English
 <li>Saves PPTX and PNG files.
 <li>First slide will be empty for user customization
 
@@ -50,7 +50,6 @@ https://user-images.githubusercontent.com/51516281/230659957-7a52ab80-0148-4343-
 
 Please note that the script assumes you have a Linux box and compatible version of Python 3 installed on your system (tested on Python 3.8.10). Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for.
 <h3>TO-DO</h3>
-<li>Full English translation or multilanguage (maybe via GPT itself).
 <li>Count token used with each model, and inform user on costs for each generation.
 <li>Speed up process, e.g. sending image request from the start in background, or parallel requests to API.
 <li>Batch capabilities: insert multiple topics to batch generate presentations.
