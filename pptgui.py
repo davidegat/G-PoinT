@@ -179,8 +179,8 @@ x = int((screen_width/2) - (window_width/2))
 y = int((screen_height/2) - (window_height/2))
 window.geometry(f"+{x}+{y}")
 
-# Create a label for topic entry ("Presentation Topic").
-topic_label = tk.Label(window, text="Argomento della presentazione:")
+# Create a label for topic entry ("Presentation topic").
+topic_label = tk.Label(window, text="Presentation topic:")
 topic_label.pack()
 
 # Create text entry for topic.
@@ -188,7 +188,7 @@ topic_entry = tk.Entry(window)
 topic_entry.pack()
 
 # Create label for number of pictures entry ("Pictures to be generated").
-num_images_label = tk.Label(window, text="Immagini da generare:")
+num_images_label = tk.Label(window, text="Pictures to be generated:")
 num_images_label.pack()
 
 # Create text entry for number of images.
@@ -197,7 +197,7 @@ num_images_entry.insert(0, "1")
 num_images_entry.pack()
 
 # Create button to generate PowerPoint and image ("Generate file(s)!").
-generate_button = tk.Button(window, text="Genera i file!", command=generate_powerpoint_and_image)
+generate_button = tk.Button(window, text="Generate!", command=generate_powerpoint_and_image)
 generate_button.pack()
 
 # Create status bar label.
