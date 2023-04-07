@@ -52,7 +52,9 @@ Please note that the script assumes you have a Linux box and compatible version 
 <li>Insert image(s) in PPTX directly.
 <li>Move prompts to external files for easier customization.
 <li>Count token used with each model, and inform user on costs for each generation.
-<li>Other platform (e.g. Windows) testing.
+<li>Speed up process, e.g. sending image request from the start in background, or parallel requests to API.
+<li>Batch capabilities: insert multiple topics to batch generate files.
+<li>Other platform (e.g. Windows) testing<br>
 <br><b>Contributions and other ideas are welcome!</b>
 
 <h3>Not professional. Not perfect.</h3>
