@@ -13,7 +13,7 @@ from pptx.dml.color import RGBColor
 # --- CONFIGURATION ---
 
 # English Language? set to True. Remember to use English prompt instead!
-english = True
+english = False
 
 # Set your API key, and paths for PowerPoint template and output directory.
 openai.api_key = "your_api_key"
@@ -21,11 +21,20 @@ template_path = "/path/to/your/template.pptx"
 output_directory = "/path/to/your/output/directory"
 
 # Define prompts text (keypoint_prompt = slides number and titles, content_prompt = slides content).
-KEYPOINT_PROMPT = "Scrivi 8 brevi titoli di massimo 6 parole di punti fondamentali da trattare in una lezione su {topic}. È importante che compaiano sempre i termini: {topic}."
-# In english: Write 8 short titles of maximum 6 words on key points to be covered in a lesson on {topic}. It is important that terms {topic} always appear.
 
-CONTENT_PROMPT = "Riassumi in 6 punti e usando MINIMO QUINDICI PAROLE gli aspetti più importanti del seguente argomento: {topic}\nNon aggiungere avvisi e scrivi solo l'elenco."
-# In English: Summarize in 6 points and using a minimum of fifteen words the most important aspects of following topic: {topic}. Do not add warnings and write only list.
+if not english:
+# YOU MUST TRANSLATE THIS PROMPT IN YOUR LANGUAGE!
+    KEYPOINT_PROMPT = "Scrivi 8 brevi titoli di massimo 6 parole di punti fondamentali da trattare in una lezione su {topic}. È importante che compaiano sempre i termini: {topic}."
+
+if english:
+    KEYPOINT_PROMPT = "Write 8 short titles of maximum 6 words on key points to be covered in a lesson on {topic}. It is important that terms {topic} always appear. Write only the list."
+
+if not english:
+# YOU MUST TRANSLATE THIS PROMPT IN YOUR LANGUAGE!
+    CONTENT_PROMPT = "Riassumi in 6 punti e usando MINIMO QUINDICI PAROLE gli aspetti più importanti del seguente argomento: {topic}\nNon aggiungere avvisi o altro testo e scrivi solo l'elenco."
+
+if english:
+    CONTENT_PROMPT = "Summarize in 6 points and using a minimum of fifteen words the most important aspects of following topic: {topic}.\nShow me ONLY the list and no other text or explanation."
 
 IMAGE_PROMPT = "a portrait photo of {topic}, detailed, cgi, octane, unreal"
 
