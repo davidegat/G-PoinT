@@ -1,7 +1,7 @@
 # G-PoinT
-<center>
+
 ![gpoint](https://user-images.githubusercontent.com/51516281/230658427-1af87422-e6f1-4b42-bfdd-ab1f411a1add.png)
-</center>
+
 <br><br>
 This software uses Python3 and GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file from template, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one (or more) <b>appropriate image(s)</b> to use within the presentation. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to translate few GUI elements to your language (currently Italian) and customize paths. Code is adequately commented, with English prompts and instructions provided where necessary. 
 
