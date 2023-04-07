@@ -12,6 +12,9 @@ from pptx.dml.color import RGBColor
 
 # --- CONFIGURATION ---
 
+# English Language? set to True. Remember to use English prompt instead!
+english = True
+
 # Set your API key, and paths for PowerPoint template and output directory.
 openai.api_key = "your_api_key"
 template_path = "/path/to/your/template.pptx"
@@ -44,19 +47,21 @@ def update_status_bar(text):
 def generate_powerpoint_and_image():
     # Get topic name and number of images from input fields.
     topic_name = topic_entry.get()
+    topic_name_en = topic_entry.get()
     num_images = int(num_images_entry.get())
-
-    # Translate topic to English with GPT, to build DALL-E prompt later.
-    prompt = f"Translate {topic_name} to English."
-    response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt=prompt,
-        max_tokens=200,
-        n=1,
-        stop=None,
-        temperature=0.5,
-    )
-    topic_name_en = response.choices[0].text.strip()
+    if not english:
+        # execute code if non english language
+        # Translate topic to English with GPT, to build DALL-E prompt later.
+        prompt = f"Translate {topic_name} to English."
+        response = openai.Completion.create(
+            engine="text-davinci-002",
+            prompt=prompt,
+            max_tokens=200,
+            n=1,
+            stop=None,
+            temperature=0.5,
+        )
+        topic_name_en = response.choices[0].text.strip()
 
     # Generate key points to use as slides titles and to generate text later.
     topic_prompts = ""
