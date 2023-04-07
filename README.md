@@ -6,11 +6,13 @@ This software uses Python3 and GPT via <a href="https://platform.openai.com/docs
 <h3>Install, configure and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>. Check Releases for compressed archives.<br>
 <b>Python3 dependencies</b>: <code>pip install python-pptx requests Pillow openai</code><br>
-<b>pptgui.py configuration</b>:<br>
+<b>Mandatory pptgui.py configuration</b>:<br>
 <code>openai.api_key = "your_api_key"
 template_path = "/path/to/your/template.pptx"
-output_directory = "/path/to/your/output/directory"</code><br>
-For further customization (temperature, prompts, tokens) look into code and change configuration variables.<br><br>
+output_directory = "/path/to/your/output/directory"
+english = False</code> Set to true <b>ONLY</b> for English language.<br>
+<b>Always translate prompts in your own language (english prompts included in comments)<br>
+For further customization, including prompts, look configuration variables at the beginning of the script.<br><br>
 <b>Running and using G-PoinT</b>:<br>
 <code>cd G-PoinT</code><br>
 <code>python3 ./pptgui.py</code><br>
