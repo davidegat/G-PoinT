@@ -36,8 +36,8 @@ You can use the included G-PoinT.desktop file and access GUI via desktop, rememb
 
 <li>Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases")
 <li>Insert number of pictures to be generated
-<li>Choose picture size from menu
-<li>Select your favourite template
+<li>Input picture size ("0" for no picture)
+<li>Select favourite template from drop down menu
 <li>Look at further generation options: you can generate both a <b>script</b> for your presentation and an <b>MP3 file</b> of it, to use within the presentation.
 <li>Click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder.<br><br><b>Please note that it may take up to one minute to generate one PowerPoint and one picture!</b> More pics means more time.<br><br>You can also choose to <b>only generate pictures</b> by clicking the "I need only pictures" button.
 <h3>Language instructions</h3>
