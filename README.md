@@ -1,5 +1,5 @@
 # G-PoinT
-![gpoint](https://user-images.githubusercontent.com/51516281/230681564-354cb7db-9330-4524-9ec2-efb2fe96c485.png)
+![gpoint](https://user-images.githubusercontent.com/51516281/231153119-eb9f4c14-a269-449a-ad86-a5bfeac305a7.png)
 <br><br>
 This software uses Python3 and GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one (or more) <b>appropriate image(s)</b> to use within the presentation. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to configure and customize paths. Code is adequately commented, with instructions provided where necessary. 
 
@@ -18,14 +18,15 @@ For further configurations, look variables and comments at the beginning of the 
 <code>python3 ./pptgui.py</code><br>
 You can use the included G-PoinT.desktop file and access GUI via desktop, remember to edit paths accordingly and make it executable: <code>chmod +x G-PoinT.desktop</code> (see <a href="https://developer-old.gnome.org/desktop-entry-spec/">Desktop Entry Specifications</a>)<br><br>
 
-Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases") and choose number of images to be generated, then click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder. <b>Please note that it may take up to one minute to generate one PowerPoint and one image!</b> More images means more time.<br><br>
-This repository contains <b>examples of output</b> and an <b>example template</b> you can customize or replace with your own, <b>template filename must stay the same</b> (template.pptx).
+<li>Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases")
+<li>Insert number of pictures to be generated
+<li>Choose picture size from menu
+<li>Select your favourite template
+<li>Click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder.<br><br><b>Please note that it may take up to one minute to generate one PowerPoint and one image!</b> More images means more time.<br><br>You can also choose to <b>only generate images</b> by clicking the "Generate more (or only) images" button.
+This repository contains <b>examples of output</b> and <b>example templates</b> you can customize or replace with your own.
 <h3>Results from GPT and DALL-E</h3>
 For different results (more slides, more text, specific contexts), modify the <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt</a> at the beginning of the script directly. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for image generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements.<br><br>
 <b>Please note</b>: script actually works well generating 8 slides made of 6 points each. If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the <a href="https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature">temperature</a> parameters, you should check for apropriate <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">token size</a> an be ready to wait <b>longer generation times</b>, and pay more on API costs (still really low btw).<br><br>
-<b>The following video shows process in real time (3 images generated).</b> Please wait until files are completely generated, or skip from 0:25 to 0:43.<br><br>
-
-https://user-images.githubusercontent.com/51516281/230659957-7a52ab80-0148-4343-bf8c-cbadd85c8603.mp4
 
 <h3>What it does?</h3>
 
@@ -39,14 +40,20 @@ https://user-images.githubusercontent.com/51516281/230659957-7a52ab80-0148-4343-
 <li>Saves PPTX and PNG files.
 <li>First slide will be empty for user customization
 
-<h3>Dependencies and requirements</h3>
+<h3>Dependencies and libraries explained</h3>
 
-<li>os - a built-in Python library for interacting with the operating system.
-<li>tkinter - a built-in Python library for creating graphical user interfaces (GUIs).
-<li>pptx - a Python library for creating and updating PowerPoint (.pptx) files.
-<li>requests - a popular Python library for making HTTP requests.
-<li>PIL (Python Imaging Library) - an open-source Python library for adding image processing capabilities to your Python interpreter.
-<li>openai - the official Python library for the OpenAI API, used to interact with OpenAI services like GPT-3 and DALL-E.
+<li>`os`: Library to interact with the operating system.
+<li>`requests`: Library to send HTTP/1.1 requests.
+<li>`openai`: Library to interact with the OpenAI API.
+<li>`glob`: Library to find files that match a specified pattern.
+<li>`webbrowser`: Library to open a web browser from a Python script.
+<li>`tkinter`: Library to create graphical user interfaces (GUIs) for desktop applications.
+<li>`messagebox`: Module within `tkinter` to display message boxes and dialogs in a GUI application.
+<li>`ttk`: Module within `tkinter` that provides a set of themed widgets.
+<li>`BytesIO`: Library to manipulate binary data in memory as if it were a file.
+<li>`pptx`: Library to create and manipulate Microsoft PowerPoint files.
+<li>`Inches` and `Pt`: Modules within `pptx.util` that provide units of measurement for PowerPoint.
+<li>`RGBColor`: Module within `pptx.dml.color` that provides a way to define colors for PowerPoint objects.
 
 Please note that the script assumes you have a Linux box and compatible version of Python 3 installed on your system (tested on Python 3.8.10). Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for.
 <h3>TO-DO</h3>
