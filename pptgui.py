@@ -17,17 +17,18 @@ from pptx.dml.color import RGBColor
 
 # Set your API key, and paths for PowerPoint template and output directory.
 openai.api_key = "YOUR-API-KEY"
-template_path = "/path/of/template.pptx" # default template path must be set
-output_directory = "/path/to/output/directory/"
-template_folder = "/home/gat/ppt/templates/"
+template_path = "./templates/template.pptx" # default template path must be set
+output_directory = "/path/to/output/directory/" # e.g. your desktop folder
+template_folder = "./templates/"
 
 # Set slides output language
 language = "English"
 
-# If you are not using English, set to False to translate prompt for DALL-E
+# If you are not using English, MUST BE set to False to translate prompt for DALL-E
+# not translating topic will result in strange images for non English languages.
 english = True
 
-# Picture prompt. Change last part to your favourite style, MUST be in English.
+# Picture prompt. Change after TOPIC to match your favourite style, MUST be in English.
 IMAGE_PROMPT = "a portrait photo of {topic}, detailed, cgi, octane, unreal"
 
 # Define temperature value. Determines GPT randomness.
@@ -44,7 +45,7 @@ CONTENT_PROMPT = "Summarize in 6 points and using at least 10 words the most imp
 keypoint_max_tokens=2000
 content_max_tokens=2000
 
-# do not edit this lines
+# do not edit these lines
 template_path = os.path.join(template_folder, "template.pptx") 
 image_size = "1024x1024"
 
@@ -60,11 +61,13 @@ def update_status_bar(text):
     
 # Define a function to generate PowerPoint presentation and image.
 def generate_powerpoint_and_image():
+    
     # Get topic name and number of images from input fields.
     topic_name = topic_entry.get()
     topic_name_en = topic_entry.get()
     num_images = int(num_images_entry.get())
     if not english:
+        
         # Translate topic to English with GPT, to build DALL-E prompt later.
         prompt = f"Translate {topic_name} to English."
         response = openai.Completion.create(
