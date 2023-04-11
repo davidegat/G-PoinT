@@ -149,19 +149,6 @@ def generate_powerpoint_and_image():
     # Save presentation.
     pptx_filename = os.path.join(output_directory, f"{topic_entry.get()}.pptx")
     prs.save(pptx_filename)     
-    
-    # Send the gpt_outputs list to GPT-3 to generate an essay.
-    essay_prompt = "Please write an essay based on the following points:\n"
-    for topic, text in gpt_outputs:
-        essay_prompt += f"\n{topic}\n{text}\n"    
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=essay_prompt,
-        max_tokens=2000,
-        n=1,
-        stop=None,
-        temperature=0.7,
-    )  
 
     # Generate and download an image using DALL-E with topic in English.
     for i in range(num_images):
