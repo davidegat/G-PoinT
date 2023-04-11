@@ -1,7 +1,7 @@
 # G-PoinT
 ![gpoint](https://user-images.githubusercontent.com/51516281/231254043-a65b5bee-75b5-4391-bb08-472becbda7f6.png)
 <br><br>
-This software uses Python3 and GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one (or more) <b>appropriate image(s)</b> to use within the presentation. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to configure and customize paths. Code is adequately commented, with instructions provided where necessary. 
+This software uses Python3 and GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one (or more) <b>appropriate image(s)</b> to use within the presentation. G-PoinT can also generate a <b>presentation script</b> and <b>MP3 audio file</b> of the script reading. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to configure and customize paths. Code is adequately commented, with instructions provided where necessary. 
 
 <h3>Install, configure and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>. Check Releases for compressed archives.<br><br>
@@ -28,8 +28,8 @@ This repository contains <b>examples of output</b> and <b>example templates</b> 
 By clicking the language menu, you can customize output language to any language supported by GPT. To make it compatible with <b>gtts</b> script must obtain a language code from your input. Examples are:<br>
 <li><b>it</b>alian
 <li><b>en</b>glish
-<li><b>deu</>tsch<br><br>
-Some languages may create chaos (e.g. portuguese, japanese...), in those cases <b>just use language code</b> like <b>jp</b>, <b>br</b>. You can use this format for any language if unsure.
+<li><b>deu</b>tsch<br><br>
+Some languages may create chaos (e.g. portuguese, japanese...), in those cases <b>just use language code</b> like <b>jp</b>, <b>pt</b>. You can use this format for any language if unsure.
 <h3>Results from GPT and DALL-E</h3>
 For different results (more slides, more text, specific contexts), modify the <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt</a> at the beginning of the script directly. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for image generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements.<br><br>
 <b>Please note</b>: script actually works well generating 8 slides made of 6 points each. If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the <a href="https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature">temperature</a> parameters, you should check for apropriate <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">token size</a> an be ready to wait <b>longer generation times</b>, and pay more on API costs (still really low btw).<br><br>
