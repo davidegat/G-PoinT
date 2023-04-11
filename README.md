@@ -9,7 +9,7 @@ This code required <b>lots</b> of API requests to be tested. If you find it usef
 In this repository you can find a ton of <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs!<br><br>
 
 <b>Watch some videos of G-PoinT in action:</b><br>
-<li>"Potato" slides and images, from start to full slide example in English.<br>
+<li>"Potato" slides and images and audio <b>from start to finished file</b>, example in English.<br>
 https://user-images.githubusercontent.com/51516281/231296285-a56c027e-3f42-40c0-b988-5de4146e2fc5.mp4
 <li>"Bonsai" slides in Italian:<br>
 https://user-images.githubusercontent.com/51516281/231291250-5506a7dc-46ee-41e1-9ce7-402ef9022a7f.mp4
