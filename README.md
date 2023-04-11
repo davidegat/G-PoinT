@@ -6,7 +6,7 @@ This software uses GPT via <a href="https://platform.openai.com/docs/api-referen
 This code required <b>lots</b> of API requests to be tested. If you find it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider donating any amount via PayPal</a>. Thanks for your support!<br>
 
 <h3>Examples</h3>
-In this repository you can find a ton of <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs!<br>
+In this repository you can find a ton of <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs!<br><br>
 
 <b>Watch some videos of G-PoinT in action:</b><br>
 <li>"Potato" slides and images, from start to full slide example in English.<br>
