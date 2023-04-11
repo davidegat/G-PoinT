@@ -9,15 +9,16 @@ This code required <b>lots</b> of API requests to be tested. If you find it usef
 In this repository you can find a ton of <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs!<br>
 
 <b>Watch some videos of G-PoinT in action:</b><br>
-<video width="320" height="240" controls>
-  <source src="https://user-images.githubusercontent.com/51516281/231291250-5506a7dc-46ee-41e1-9ce7-402ef9022a7f.mp4" type="video/mp4">
-</video>
-<video width="320" height="240" controls>
-  <source src="https://user-images.githubusercontent.com/51516281/231291271-30f5f722-65ed-427c-b817-904f4948e03f.mp4" type="video/mp4">
-</video>
-https://user-images.githubusercontent.com/51516281/231291250-5506a7dc-46ee-41e1-9ce7-402ef9022a7f.mp4<br>
+<li>"Potato" slides and images, from start to full slide example in English.<br>
+https://user-images.githubusercontent.com/51516281/231296285-a56c027e-3f42-40c0-b988-5de4146e2fc5.mp4
+<li>"Bonsai" slides in Italian:<br>
+https://user-images.githubusercontent.com/51516281/231291250-5506a7dc-46ee-41e1-9ce7-402ef9022a7f.mp4
+<li>"Tulips" slides in English:<br>
 https://user-images.githubusercontent.com/51516281/231291271-30f5f722-65ed-427c-b817-904f4948e03f.mp4
-
+<li>"Turing Test" slides in French:<br>
+https://user-images.githubusercontent.com/51516281/231295684-448886f5-54c6-4501-b321-c28f774ec2ff.mp4
+<li>"Albert Einstein" slides in English<br>
+https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-b45b-fddc9c467007.mp4
 
 <h3>Install, configure and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>. Check Releases for compressed archives.<br><br>
