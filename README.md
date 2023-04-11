@@ -1,19 +1,17 @@
 # G-PoinT
-![gpoint](https://user-images.githubusercontent.com/51516281/231153119-eb9f4c14-a269-449a-ad86-a5bfeac305a7.png)
+![gpoint](https://user-images.githubusercontent.com/51516281/231254043-a65b5bee-75b5-4391-bb08-472becbda7f6.png)
 <br><br>
 This software uses Python3 and GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one (or more) <b>appropriate image(s)</b> to use within the presentation. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to configure and customize paths. Code is adequately commented, with instructions provided where necessary. 
 
 <h3>Install, configure and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>. Check Releases for compressed archives.<br><br>
-<b>Python3 dependencies</b>: <code>pip install python-pptx requests Pillow openai</code><br><br>
+<b>Python3 dependencies</b>: <code>pip install python-pptx requests Pillow openai gtts</code><br><br>
 <b>Mandatory pptgui.py configuration</b>:<br>
 <code>openai.api_key = "your_api_key"
 template_path = "./templates/template.pptx"
 template_folder = "./templates/"
 output_directory = "/path/to/your/output/directory"</code><br>
-<code>english = True</code> - For DALL-E prompt translation, set it to False if language is NOT in English.<br>
-<code>language = "English"</code> - Set output language (any language understood by GPT).<br>
-For further configurations, look variables and comments at the beginning of the script.<br><br>
+For further configurations, look variables and comments at the beginning of the script. Most of the parameters can be changed on the fly via gui (e.g. language).<br><br>
 <b>Running and using G-PoinT</b>:<br>
 <code>cd G-PoinT</code><br>
 <code>python3 ./pptgui.py</code><br>
@@ -23,8 +21,15 @@ You can use the included G-PoinT.desktop file and access GUI via desktop, rememb
 <li>Insert number of pictures to be generated
 <li>Choose picture size from menu
 <li>Select your favourite template
+<li>Look at further generation options: you can generate both a <b>script</b> for your presentation and an <b>MP3 file</b> of it, to use within the presentation.
 <li>Click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder.<br><br><b>Please note that it may take up to one minute to generate one PowerPoint and one image!</b> More images means more time.<br><br>You can also choose to <b>only generate images</b> by clicking the "Generate more (or only) images" button.
 This repository contains <b>examples of output</b> and <b>example templates</b> you can customize or replace with your own.
+<h3>Language instructions</h3>
+By clicking the language menu, you can customize output language to any language supported by GPT. To make it compatible with <b>gtts</b> script must obtain a language code from your input. Examples are:<br>
+<li><b>it</b>alian
+<li><b>en</b>glish
+<li><b>deu</>tsch<br><br>
+Some languages may create chaos (e.g. portuguese, japanese...), in those cases <b>just use language code</b> like <b>jp</b>, <b>br</b>. You can use this format for any language if unsure.
 <h3>Results from GPT and DALL-E</h3>
 For different results (more slides, more text, specific contexts), modify the <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt</a> at the beginning of the script directly. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for image generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements.<br><br>
 <b>Please note</b>: script actually works well generating 8 slides made of 6 points each. If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the <a href="https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature">temperature</a> parameters, you should check for apropriate <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">token size</a> an be ready to wait <b>longer generation times</b>, and pay more on API costs (still really low btw).<br><br>
@@ -39,6 +44,7 @@ For different results (more slides, more text, specific contexts), modify the <a
 <li>Translates topic from whatever language to English (also via GPT prompt - if not already in English).
 <li>Asks DALL-E for images using topic in English
 <li>Saves PPTX and PNG files.
+<li>Generates other files at user request: presentation script, MP3 audio of the script.
 <li>First slide will be empty for user customization
 
 <h3>Dependencies and libraries explained</h3>
@@ -55,6 +61,7 @@ For different results (more slides, more text, specific contexts), modify the <a
 <li>`pptx`: Library to create and manipulate Microsoft PowerPoint files.
 <li>`Inches` and `Pt`: Modules within `pptx.util` that provide units of measurement for PowerPoint.
 <li>`RGBColor`: Module within `pptx.dml.color` that provides a way to define colors for PowerPoint objects.
+<li>`gTTS`: A library for converting text to speech.
 
 Please note that the script assumes you have a Linux box and compatible version of Python 3 installed on your system (tested on Python 3.8.10). Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for.
 <h3>TO-DO</h3>
