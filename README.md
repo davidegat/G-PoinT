@@ -3,6 +3,8 @@
 <br><br>
 This software uses Python3 and GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one (or more) <b>appropriate image(s)</b> to use within the presentation. G-PoinT can also generate a <b>presentation script</b> and <b>MP3 audio file</b> of the script reading. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. You will need to configure and customize paths. Code is adequately commented, with instructions provided where necessary. 
 
+<h3>Examples</h3>
+In this repository you can find a ton of <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: presentations, presentation scripts, images, MP3 files. Take a look to see if this software can satisfy your needs!
 <h3>Install, configure and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>. Check Releases for compressed archives.<br><br>
 <b>Python3 dependencies</b>: <code>pip install python-pptx requests Pillow openai gtts</code><br><br>
@@ -23,7 +25,6 @@ You can use the included G-PoinT.desktop file and access GUI via desktop, rememb
 <li>Select your favourite template
 <li>Look at further generation options: you can generate both a <b>script</b> for your presentation and an <b>MP3 file</b> of it, to use within the presentation.
 <li>Click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder.<br><br><b>Please note that it may take up to one minute to generate one PowerPoint and one image!</b> More images means more time.<br><br>You can also choose to <b>only generate images</b> by clicking the "Generate more (or only) images" button.
-This repository contains <b>examples of output</b> and <b>example templates</b> you can customize or replace with your own.
 <h3>Language instructions</h3>
 By clicking the language menu, you can customize output language to any language supported by GPT. To make it compatible with <b>gtts</b> script must obtain a language code from your input. Examples are:<br>
 <li><b>it</b>alian
