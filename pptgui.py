@@ -24,8 +24,8 @@ template_folder = "./templates/"
 # Set slides output language
 language = "English"
 
-# If you are not using English, MUST BE set to False to translate prompt for DALL-E
-# not translating topic will result in strange images for non English languages.
+# If you are not using English, MUST BE set to False to translate prompt for DALL-E!
+# Not translating topic will result in strange images for non English languages.
 english = True
 
 # Picture prompt. Change after TOPIC to match your favourite style, MUST be in English.
