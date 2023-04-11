@@ -8,7 +8,8 @@ This software uses Python3 and GPT via <a href="https://platform.openai.com/docs
 <b>Python3 dependencies</b>: <code>pip install python-pptx requests Pillow openai</code><br><br>
 <b>Mandatory pptgui.py configuration</b>:<br>
 <code>openai.api_key = "your_api_key"
-template_path = "/path/to/your/template.pptx"
+template_path = "./templates/template.pptx"
+template_folder = "./templates/"
 output_directory = "/path/to/your/output/directory"</code><br>
 <code>english = True</code> - For DALL-E prompt translation, set it to False if language is NOT in English.<br>
 <code>language = "English"</code> - Set output language (any language understood by GPT).<br>
