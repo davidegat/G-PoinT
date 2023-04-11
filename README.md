@@ -28,7 +28,7 @@ https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-
 template_path = "./templates/template.pptx"
 template_folder = "./templates/"
 output_directory = "/path/to/your/output/directory"</code><br>
-For further configurations, look variables and comments at the beginning of the script. Most of the parameters can be changed on the fly via gui (e.g. language).<br><br>
+For further configurations, look variables and comments at the beginning of the script. Language can also be changed "on the fly" via GUI (see videos).<br><br>
 <b>Running and using G-PoinT</b>:<br>
 <code>cd G-PoinT</code><br>
 <code>python3 ./pptgui.py</code><br>
