@@ -65,6 +65,7 @@ Windows:
 - Move to G-PoinT folder and run pptgui.py
 - `cd G-PoinT` (or folder where pptgui.py is)
 - `python.exe pptgui.py`
+- If you associated .py files with python.exe, this should work by opening the script directly.
 
 **Usage:**
 - Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases")
