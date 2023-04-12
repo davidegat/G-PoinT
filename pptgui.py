@@ -4,7 +4,7 @@
 # 2023 - gat.
 # Under GPL3 License.
 
-# Import necessary libraries, se README for details.
+# Import needed libraries, se README for details.
 import os
 import requests
 import openai
