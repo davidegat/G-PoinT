@@ -421,7 +421,7 @@ def show_about_message():
     about_window.title("About")
     about_window.geometry("400x200")
     
-    message = "G-PoinT v1.4.0 by gat\n\nGenerates complete PowerPoint files and images, using OpenAI's GPT-3 API and DALL-E image generation model.\n\nhttps://github.com/davidegat/G-PoinT\n\nLicensed under the GNU General Public License v3.0"
+    message = "G-PoinT v1.5.0 by gat\n\nGenerates complete PowerPoint files and images, using OpenAI's GPT-3 API and DALL-E image generation model.\n\nhttps://github.com/davidegat/G-PoinT\n\nLicensed under the GNU General Public License v3.0"
     
     text_widget = tk.Text(about_window, wrap=tk.WORD, padx=10, pady=10)
     text_widget.insert(tk.END, message)
