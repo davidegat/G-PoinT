@@ -102,3 +102,5 @@ Please note that the script assumes you have a Linux or Windows box with compati
 
 <h3>Not professional. Not perfect.</h3>
 G-PoinT is not a substitute for a real person in terms of contents, but if you know what to do with prompts you could get good starting points to speed up your workflow, and get inspired.
+<br><br>
+Released under <a href="https://github.com/davidegat/G-PoinT/blob/main/LICENSE">GPL3 License</a>.
