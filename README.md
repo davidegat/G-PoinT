@@ -24,7 +24,7 @@ https://user-images.githubusercontent.com/51516281/231295684-448886f5-54c6-4501-
 https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-b45b-fddc9c467007.mp4
 
 <h3>Install, configure and run</h3>
-Both for Windows and Linux machines, <a href="https://git-scm.com/downloads">git</a> must be available.<br>
+Both for Windows and Linux machines, <a href="https://git-scm.com/downloads">git</a> and <a href="https://pip.pypa.io/en/stable/installation/">pip</a> must be installed.<br><br>
 Type following commands in Linux Terminal or Windows PowerShell Terminal.<br><br>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>.<br>Check <a href="https://github.com/davidegat/G-PoinT/releases">Releases</a> for compressed archives.<br><br>
 <b>Python3 dependencies</b>: <code>pip install requests openai messagebox gTTS python-pptx</code><br>
@@ -95,7 +95,7 @@ For different results (more slides, more text, specific contexts), modify the <a
 <li>`RGBColor`: Module within `pptx.dml.color` that provides a way to define colors for PowerPoint objects.
 <li>`gTTS`: A library for converting text to speech.
 
-Please note that the script assumes you have a Linux or Windows box with compatible version of Python 3 installed on your system. Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for.
+Please note that the script assumes you have a Linux or Windows box with compatible version of Python 3 installed on your system. Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for. Both for Windows and Linux machines, <a href="https://git-scm.com/downloads">git</a> and <a href="https://pip.pypa.io/en/stable/installation/">pip</a> must be installed.
 <h3>TO-DO</h3>
 <li>Count token used with each model, and inform user on costs for each generation.
 <li>Speed up process, e.g. sending picture request from the start in background, or parallel requests to API.
