@@ -34,11 +34,18 @@ Language can be changed "on the fly" via GUI (see <a href="https://github.com/da
 <b>Templates</b>:<br>
 G-PoinT has some example templates working out of the box for testing, but you may want to replace them with your own. Just copy your favourite PowerPoint templates into "templates" folder before running G-PoinT. You will find them in dropdown menu ready to be used. Please, do not delete default template, or keep at least one file named "template.pptx" into the templates folder.<br><br>
 <b>Running and using G-PoinT</b>:<br>
-Via Linux terminal, or Windows PowerShell terminal (WIN+R, <code>powershell</code> -enter-) type:<br>
-<code>cd G-PoinT</code><br> (both Linux and Windows)
-<code>chmod +x ./pptgui.py</code> (Linux only - type this command <b>only one time</b>)<br>
-<code>./pptgui.py</code><br> (Windows: <code>python.exe pptgui.py</code><br>
-For Linux: you can use the included G-PoinT.desktop file and access GUI via desktop, copy it to your desktop, remember to edit paths accordingly, and make it executable via terminal with: <code>chmod +x G-PoinT.desktop</code> (see <a href="https://developer-old.gnome.org/desktop-entry-spec/">Desktop Entry Specifications</a>).<br><br>
+Linux:
+<li>Via terminal: <code>cd G-PoinT</code>
+<li><code>chmod +x ./pptgui.py</code> (type this command <b>only one time</b>)<br>
+<li><code>./pptgui.py</code><br>
+<li>You can use the included G-PoinT.desktop file and access GUI via desktop, copy it to your desktop, remember to edit paths accordingly, and make it executable via terminal with: <code>chmod +x G-PoinT.desktop</code> (see <a href="https://developer-old.gnome.org/desktop-entry-spec/">Desktop Entry Specifications</a>).
+<br><br>
+Windows:
+<li> Open Windows PowerShell terminal (WIN+R, <code>powershell</code> -enter-)
+<li><code>cd G-PoinT</code>
+<li><code>python.exe pptgui.py</code><br>
+<br>
+<b>Usage:</b>
 <li>Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases")
 <li>Insert number of pictures to be generated ("0" for no picture)
 <li>Input picture size
@@ -47,7 +54,7 @@ For Linux: you can use the included G-PoinT.desktop file and access GUI via desk
 <li>Click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder.
 <li>You can also choose to <b>only generate pictures</b> by clicking the "I need only pictures" button.<br><br><b>Please note that it may take up to one minute to generate one PowerPoint and one picture!</b> More pics means more time.
 <h3>Language settings instructions</h3>
-By modifying the "language" variable into the script, you will set your default language. Anyway, by clicking the language menu, you can customize output to any language supported by GPT on the fly. To make it compatible with <b>gtts</b>, G-PoinT must obtain a language code from first characters of your input. Examples are:<br>
+By modifying the "language" variable in config file, you will set your default language. Anyway, by clicking the language menu, you can customize output to any language supported by GPT on the fly. To make it compatible with <b>gtts</b>, G-PoinT must obtain a language code from first characters of your input. Examples are:<br>
 <li><b>it</b>alian
 <li><b>en</b>glish
 <li><b>de</b>utsch<br><br>
