@@ -87,7 +87,7 @@ For different results (more slides, more text, specific contexts), modify the <a
 <li>`pptx`: Library to create and manipulate Microsoft PowerPoint files.
 <li>`Inches` and `Pt`: Modules within `pptx.util` that provide units of measurement for PowerPoint.
 <li>`RGBColor`: Module within `pptx.dml.color` that provides a way to define colors for PowerPoint objects.
-<li>`gTTS`: A library for converting text to speech.
+<li>`gTTS`: A library for converting text to speech.<br><br>
 Please note that software assumes you have a Linux or Windows box with compatible version of Python 3 installed on your system. Additionally, it relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for. Both for Windows and Linux machines, <a href="https://git-scm.com/downloads">git</a> and <a href="https://pip.pypa.io/en/stable/installation/">pip</a> must be installed.
 <h3>TO-DO</h3>
 <li>Count token used with each model, and inform user on costs for each generation.
