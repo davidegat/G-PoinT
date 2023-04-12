@@ -32,9 +32,11 @@ For further configurations, look variables and comments at the beginning of the 
 <b>Templates</b>:<br>
 G-PoinT has some example templates working out of the box for testing, but you may want to replace them with your own. Just copy your favourite PowerPoint templates into "templates" folder before running G-PoinT. You will find them in dropdown menu ready to be used. Please, do not delete default template, or keep ad least one file named "template.pptx" into the templates folder.<br><br>
 <b>Running and using G-PoinT</b>:<br>
+Via Linux terminal type:<br>
 <code>cd G-PoinT</code><br>
-<code>python3 ./pptgui.py</code><br>
-You can use the included G-PoinT.desktop file and access GUI via desktop, remember to edit paths accordingly and make it executable: <code>chmod +x G-PoinT.desktop</code> (see <a href="https://developer-old.gnome.org/desktop-entry-spec/">Desktop Entry Specifications</a>)<br><br>
+<code>chmod +x ./pptgui.py</code> (type this command <b>only one time</b>)<br>
+<code>./pptgui.py</code><br>
+You can use the included G-PoinT.desktop file and access GUI via desktop, copy it to your desktop, remember to edit paths accordingly, and make it executable via terminal with: <code>chmod +x G-PoinT.desktop</code> (see <a href="https://developer-old.gnome.org/desktop-entry-spec/">Desktop Entry Specifications</a>).<br><br>
 
 <li>Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases")
 <li>Insert number of pictures to be generated ("0" for no picture)
