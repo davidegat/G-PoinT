@@ -8,10 +8,8 @@ Tested on:
 <br>Please report any other working scenario!<br><br>You will need to configure it with API KEY and custom paths in "config.ini" file. Code is adequately commented, with instructions provided where necessary. 
 <h3>Help testing and developing</h3>
 This code requires <b>lots</b> of API requests to be tested, mantained, upgraded, and hereby given for free. If you found it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider supporting this project API costs with any small amount via PayPal</a>. <br>If you are a developer and want to contribute with <b>ideas and code</b>, you are welcome too!<br><br>Thanks for your sincere kindness! <3
-
 <h3>Examples</h3>
 In this repository you can find <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: full presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs! Files are uploaded as-is to understand both capabilities and limitations.<br><br>
-
 <b>Watch some videos of G-PoinT in action:</b><br>
 <li>"Potato" slides, images, script and audio <b>from first input to finished file</b>, example in English.<br>
 https://user-images.githubusercontent.com/51516281/231296285-a56c027e-3f42-40c0-b988-5de4146e2fc5.mp4
@@ -23,7 +21,6 @@ https://user-images.githubusercontent.com/51516281/231291271-30f5f722-65ed-427c-
 https://user-images.githubusercontent.com/51516281/231295684-448886f5-54c6-4501-b321-c28f774ec2ff.mp4
 <li>"Albert Einstein" slides in English<br>
 https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-b45b-fddc9c467007.mp4
-
 <h3>Install, configure and run</h3>
 Both for Windows and Linux machines, <a href="https://git-scm.com/downloads">git</a> and <a href="https://pip.pypa.io/en/stable/installation/">pip</a> must be installed. Type following commands in Linux Terminal or Windows PowerShell Terminal.<br><br>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>.<br>Check <a href="https://github.com/davidegat/G-PoinT/releases">Releases</a> for compressed archives.<br><br>
@@ -65,9 +62,7 @@ Some languages may create chaos (e.g. Portuguese - pt, Chinese - zh...), but GPT
 <h3>Customize GPT results for text and pictures</h3>
 For different results (more slides, more text, specific contexts), modify the <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt</a> in <b>config.ini</b>. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for picture generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements.<br><br>
 <b>Please note</b>: script actually works well generating 8 slides made of 6 points each. If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the <a href="https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature">temperature</a> parameters, you should check for apropriate <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">token size</a> an be ready to wait <b>longer generation times</b>, and pay more on API costs (still really low btw).
-
 <h3>What it does?</h3>
-
 <li>Shows Tkinter GUI and asks user for a topic and number of pictures to generate
 <li>Sends prompt and topic to GPT
 <li>Gets back 8 key points, each one will be a slide
@@ -78,7 +73,6 @@ For different results (more slides, more text, specific contexts), modify the <a
 <li>Saves PPTX and PNG files.
 <li>Generates other files at user request: presentation script, MP3 audio of the script.
 <li>First slide will be empty for user customization
-
 <h3>Dependencies and libraries explained</h3>
 <code>pip install requests openai messagebox gTTS python-pptx</code><br>
 <li>`os`: Library to interact with the operating system.
@@ -94,15 +88,13 @@ For different results (more slides, more text, specific contexts), modify the <a
 <li>`Inches` and `Pt`: Modules within `pptx.util` that provide units of measurement for PowerPoint.
 <li>`RGBColor`: Module within `pptx.dml.color` that provides a way to define colors for PowerPoint objects.
 <li>`gTTS`: A library for converting text to speech.
-
-Please note that the script assumes you have a Linux or Windows box with compatible version of Python 3 installed on your system. Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for. Both for Windows and Linux machines, <a href="https://git-scm.com/downloads">git</a> and <a href="https://pip.pypa.io/en/stable/installation/">pip</a> must be installed.
+Please note that software assumes you have a Linux or Windows box with compatible version of Python 3 installed on your system. Additionally, it relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for. Both for Windows and Linux machines, <a href="https://git-scm.com/downloads">git</a> and <a href="https://pip.pypa.io/en/stable/installation/">pip</a> must be installed.
 <h3>TO-DO</h3>
 <li>Count token used with each model, and inform user on costs for each generation.
 <li>Speed up process, e.g. sending picture request from the start in background, or parallel requests to API.
 <li>Batch capabilities: insert multiple topics to batch generate presentations.
 <li>Other platforms testing<br>
 <br><b>Contributions and ideas are welcome!</b>
-
 <h3>Not professional. Not perfect.</h3>
 G-PoinT is not a substitute for a real person in terms of contents, but if you know what to do with prompts you could get good starting points to speed up your workflow, and get inspired.
 <br><br>
