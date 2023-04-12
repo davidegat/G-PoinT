@@ -21,7 +21,8 @@ from pptx.dml.color import RGBColor
 from gtts import gTTS
 
 # Remember to install libraries via terminal:
-# pip install os requests openai glob webbrowser tkinter gTTS pptx
+# pip install os requests openai webbrowser tkinter gTTS pptx
+# if you miss for some reason tkinter and glob: pip install tkinter glob
 
 # --- MANDATORY SETTINGS ---
 # Set your API key, and paths for output directory.
