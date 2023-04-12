@@ -6,10 +6,10 @@ This software uses GPT via <a href="https://platform.openai.com/docs/api-referen
 This code requires <b>lots</b> of API requests to be tested and upgraded. If you find it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider supporting with any amount via PayPal</a>. Thanks for your kindness!<br>
 
 <h3>Examples</h3>
-In this repository you can find a ton of <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs!<br><br>
+In this repository you can find <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: full presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs! Files are uploaded as-is to understand both capabilities and limitations.<br><br>
 
 <b>Watch some videos of G-PoinT in action:</b><br>
-<li>"Potato" slides and images and audio <b>from start to finished file</b>, example in English.<br>
+<li>"Potato" slides, images, script and audio <b>from first input to finished file</b>, example in English.<br>
 https://user-images.githubusercontent.com/51516281/231296285-a56c027e-3f42-40c0-b988-5de4146e2fc5.mp4
 <li>"Bonsai" slides in Italian:<br>
 https://user-images.githubusercontent.com/51516281/231291250-5506a7dc-46ee-41e1-9ce7-402ef9022a7f.mp4
