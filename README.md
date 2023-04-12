@@ -6,7 +6,7 @@ Tested on:
 <li>Linux 5.15.0-69, Ubuntu 20.04.1, Python 3.8.10.
 <li>Windows 11, Python 3.11.3 (with pip enabled, and installed libraries), <a href="https://www.python.org/downloads/windows/">Python for Windows</a> needed. <br><br>You will need just to configure it with API KEY and customize paths in "config.ini" file. Please report any working scenario to update this list! Code is adequately commented, with instructions provided where necessary. 
 <h3>Help testing and developing</h3>
-This code requires <b>lots</b> of API requests to be tested, mantained, upgraded, and hereby given for free. If you found it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider supporting this project API costs with any small amount via PayPal</a>. <br>If you are a developer and want to contribute with <b>ideas and code</b>, you are welcome too!<br><br>Thanks for your sincere kindness! <3<br>
+This code requires <b>lots</b> of API requests to be tested, mantained, upgraded, and hereby given for free. If you found it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider supporting this project API costs with any small amount via PayPal</a>. <br>If you are a developer and want to contribute with <b>ideas and code</b>, you are welcome too!<br><br>Thanks for your sincere kindness! <3
 
 <h3>Examples</h3>
 In this repository you can find <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: full presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs! Files are uploaded as-is to understand both capabilities and limitations.<br><br>
@@ -44,7 +44,8 @@ Linux:
 <br><br>
 Windows:
 <li> Open Windows PowerShell terminal (WIN+R, <code>powershell</code> -enter-)
-<li><code>cd G-PoinT</code>
+<li> Move to G-PoinT folder and run pptgui.py
+<li><code>cd G-PoinT</code> (or folder where pptgui.py is)
 <li><code>python.exe pptgui.py</code><br>
 <br>
 <b>Usage:</b>
