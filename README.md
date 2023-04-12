@@ -27,16 +27,16 @@ https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>.<br>Check <a href="https://github.com/davidegat/G-PoinT/releases">Releases</a> for compressed archives.<br><br>
 <b>Python3 dependencies</b>: <code>pip install requests openai messagebox gTTS python-pptx</code><br>
 If you miss for some reason tkinter and glob: <code>pip install tkinter glob</code><br><br>
-<b>Mandatory pptgui.py configuration</b>:<br>
+<b>Mandatory "config.ini" configuration</b>:<br>
 <code>openai.api_key = "your_api_key"
 template_path = "./templates/template.pptx"
 template_folder = "./templates/"
 output_directory = "/path/to/your/output/directory"</code><br>
-For further configurations, look variables and comments at the beginning of the script. Language can also be changed "on the fly" via GUI (see <a href="https://github.com/davidegat/G-PoinT#examples">videos</a>).<br><br>
+Language can be changed "on the fly" via GUI (see <a href="https://github.com/davidegat/G-PoinT#examples">videos</a>).<br><br>
 <b>Templates</b>:<br>
 G-PoinT has some example templates working out of the box for testing, but you may want to replace them with your own. Just copy your favourite PowerPoint templates into "templates" folder before running G-PoinT. You will find them in dropdown menu ready to be used. Please, do not delete default template, or keep at least one file named "template.pptx" into the templates folder.<br><br>
 <b>Running and using G-PoinT</b>:<br>
-Via Linux or Windows terminal type:<br>
+Via Linux terminal, or Windows PowerShell terminal (WIN+R, <code>powershell</code> -enter-) type:<br>
 <code>cd G-PoinT</code><br> (both Linux and Windows)
 <code>chmod +x ./pptgui.py</code> (Linux only - type this command <b>only one time</b>)<br>
 <code>./pptgui.py</code><br> (Windows: <code>python.exe pptgui.py</code><br>
@@ -55,7 +55,7 @@ By modifying the "language" variable into the script, you will set your default 
 <li><b>de</b>utsch<br><br>
 Some languages may create chaos (e.g. Portuguese - pt, Chinese - zh...), but GPT can generate text only with language codes, in these cases <b>just input your language code</b> (<b>zh</b>, <b>pt</b>, <b>en</b>, <b>fi</b>..). You can use this format for <b>any</b> language if unsure.<br><br>G-PoinT can work well with English input also if a different language is set, but best results are obtained if input is written in your own language (generates a better presentation script and MP3).
 <h3>Customize GPT results for text and pictures</h3>
-For different results (more slides, more text, specific contexts), modify the <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt</a> at the beginning of the script directly. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for picture generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements.<br><br>
+For different results (more slides, more text, specific contexts), modify the <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt</a> in <b>config.ini</b>. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for picture generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements.<br><br>
 <b>Please note</b>: script actually works well generating 8 slides made of 6 points each. If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the <a href="https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature">temperature</a> parameters, you should check for apropriate <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">token size</a> an be ready to wait <b>longer generation times</b>, and pay more on API costs (still really low btw).
 
 <h3>What it does?</h3>
@@ -87,12 +87,12 @@ For different results (more slides, more text, specific contexts), modify the <a
 <li>`RGBColor`: Module within `pptx.dml.color` that provides a way to define colors for PowerPoint objects.
 <li>`gTTS`: A library for converting text to speech.
 
-Please note that the script assumes you have a Linux box and compatible version of Python 3 installed on your system (tested on Python 3.8.10). Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for.
+Please note that the script assumes you have a Linux or Windows box with compatible version of Python 3 installed on your system. Additionally, script relies on having access to the <a href="https://platform.openai.com/account/api-keys">OpenAI API key</a>, which you'll need to $ign up for.
 <h3>TO-DO</h3>
 <li>Count token used with each model, and inform user on costs for each generation.
 <li>Speed up process, e.g. sending picture request from the start in background, or parallel requests to API.
 <li>Batch capabilities: insert multiple topics to batch generate presentations.
-<li>Other platforms (e.g. Windows) testing<br>
+<li>Other platforms testing<br>
 <br><b>Contributions and ideas are welcome!</b>
 
 <h3>Not professional. Not perfect.</h3>
