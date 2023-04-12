@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+# G-PoinT - GPT Powered PowerPoint file and media generator.
+# 2023 - gat.
+# Under GPL3 License.
+
+# Import necessary libraries, se README for details.
 import os
 import requests
 import openai
@@ -15,30 +20,33 @@ from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from gtts import gTTS
 
-# pip install requests openai glob3 tkinter python-docx python-pptx gtts
+# Remember to install libraries via terminal:
+# pip install requests openai glob3 tkinter python-pptx gtts
 
 # --- MANDATORY SETTINGS ---
 # Set your API key, and paths for output directory.
 openai.api_key = "YOUR-API-KEY"
 output_directory = "/your/desktop/or/favourite/folder/"
 
-# --- DEFAULT SETTINGS --
-template_path = "./templates/template.pptx"
-template_folder = "./templates/"
+# --- DEFAULT SETTINGS ---
+template_path = "./templates/template.pptx" # default template file path
+template_folder = "./templates/" # templates folder
 
-# Set slides output default language
-# settings can be changed "on the fly" via GUI
+# Set output default language at startup.
+# Language settings can be changed "on the fly" via GUI
 language = "English"
 
-# If you are not using English, set to False to translate prompt for DALL-E
-# setting is changed "on the fly" via GUI
+# If you are NOT using English, set to False to translate prompt for DALL-E.
+# This setting is changed "on the fly" via GUI.
 english = True
 
 # ---- OTHER SETTINGS ----
-# Edit only if you know what to do with gpt prompts!
+# Edit only if you know what to do with GPT prompts!
 
+# Prompt for slide titles aka slide topics.
 KEYPOINT_PROMPT = "Write 8 short titles of maximum 6 words on key points to be covered in a lesson about topic: {topic}. It is important that terms {topic} always appear. From now on we will interact ONLY in good {language} language."
 
+# Prompt for slide content.
 CONTENT_PROMPT = "Summarize in 6 points and using at least 10 words the most important aspects of following topic: {topic}.\nShow me ONLY the list and no other text. From now on we will interact ONLY in good {language} language."
 
 # Picture prompt. Change last part to your favourite style, MUST be in English.
@@ -58,14 +66,16 @@ essay_max_tokens=1500
 template_path = os.path.join(template_folder, "template.pptx")
 image_size = "512x512"
 
+# Get templates filenames from folder.
 def get_template_filenames():
     template_files = glob.glob(os.path.join(template_folder, "*.pptx"))
     return [os.path.basename(f) for f in template_files]
 
-# Define update_status_bar function.
+# Function to update_status_bar.
 def update_status_bar(text):
     status_bar.config(text=text)
 
+# Function to generate PowerPoint presentation and image.
 def generate_mp3(essay_file_path):
     mp3_file_path = os.path.splitext(essay_file_path)[0] + ".mp3"
     with open(essay_file_path, "r") as f:
@@ -75,10 +85,10 @@ def generate_mp3(essay_file_path):
     tts.save(mp3_file_path)
     return mp3_file_path
 
-# Define a function to generate PowerPoint presentation and image.
+# Function to generate PowerPoint presentation and image.
 def generate_powerpoint_and_image():
 
-    # Get topic name and number of images from input fields.
+    # Get topic name and number of images from input.
     topic_name = topic_entry.get()
     topic_name_en = topic_entry.get()
     num_images = int(num_images_entry.get())
@@ -131,10 +141,10 @@ def generate_powerpoint_and_image():
     # and fill it with generated key points (slides) and text.
     # See 'pptx' library documentation for further graphic customization.
     prs = Presentation(template_path)
-    gpt_outputs = []  # Add this line to create an empty list for storing GPT outputs.
+    gpt_outputs = []  # Create an empty list for storing GPT outputs.
 
     for topic, text in lists:
-        gpt_outputs.append((topic, text))  # Add this line to store the GPT outputs.
+        gpt_outputs.append((topic, text))  # Store GPT outputs.
 
     for topic, text in lists:
         slide = prs.slides.add_slide(prs.slide_layouts[1])
@@ -167,7 +177,8 @@ def generate_powerpoint_and_image():
     prs.save(pptx_filename)     
 
     if essay_checkbox_var.get():
-        # Send the gpt_outputs list to GPT-3 to generate an essay.
+                
+        # Send gpt_outputs list to GPT-3 to generate an essay.
         essay_prompt = "Please write a long detailed text in good {language} language, that considers each one of the following points:\n"
         for topic, text in gpt_outputs:
             essay_prompt += f"\n{topic}\n{text}\n"    
@@ -180,23 +191,23 @@ def generate_powerpoint_and_image():
             temperature=0.5,
         )  
         
-    # Extract the generated essay from the API response
+    # Extract generated essay from API response
     essay = response.choices[0].text
 
-    # Check if the essay_checkbox is checked before saving the essay to a text file
+    # Check again if essay_checkbox is checked before saving essay to a text file
     if essay_checkbox_var.get():
 
-        # Define the file path
+        # Define file path
         file_path = os.path.join(output_directory,"presentation_script.txt")
 
-        # Write the essay to a file in the specified directory
+        # Write essay to a file in specified directory
         with open(file_path, "w") as f:
             f.write(essay)
     
         if generate_mp3_var.get():
             generate_mp3(file_path)
 
-    # Generate and download an image using DALL-E with topic in English.
+    # Generate and download an image with topic in English.
     for i in range(num_images):
         image_url = "https://api.openai.com/v1/images/generations"
         prompt = IMAGE_PROMPT.format(topic=topic_name_en)
@@ -223,12 +234,15 @@ def generate_powerpoint_and_image():
             f.write(image_content)
         update_status_bar("Files generated!") 
 
+# Function to only generate images from input.
 def generate_images():
-    # Get topic name and number of images from input fields.
+        
+    # Get topic name and number of images from input.
     topic_name = topic_entry.get()
     topic_name_en = topic_entry.get()
     num_images = int(num_images_entry.get())
     if not english:
+        
         # Translate topic to English with GPT, to build DALL-E prompt later.
         prompt = f"Translate {topic_name} to English."
         response = openai.Completion.create(
@@ -241,7 +255,7 @@ def generate_images():
         )
         topic_name_en = response.choices[0].text.strip()
 
-    # Generate and download only images using DALL-E with topic in English.
+    # Generate and download only images with topic in English.
     for i in range(num_images):
         image_url = "https://api.openai.com/v1/images/generations"
         prompt = IMAGE_PROMPT.format(topic=topic_name_en)
@@ -285,24 +299,24 @@ x = int((screen_width/2) - (window_width/2))
 y = int((screen_height/2) - (window_height/2))
 window.geometry(f"+{x}+{y}")
 
-# Create a label for topic entry ("Presentation topic").
+# Label for topic entry ("Presentation topic").
 topic_label = tk.Label(window, text="Presentation topic:")
 topic_label.pack()
 
-# Create text entry for topic.
+# Text entry for topic.
 topic_entry = tk.Entry(window)
 topic_entry.pack()
 
-# Create label for number of pictures entry ("Pictures to be generated").
+# Label for number of pictures entry ("Pictures to be generated").
 num_images_label = tk.Label(window, text="How many pictures:")
 num_images_label.pack()
 
-# Create text entry for number of images.
+# Text entry for number of images.
 num_images_entry = tk.Entry(window)
 num_images_entry.insert(0, "0")
 num_images_entry.pack()
 
-# Create a label for image size selection.
+# Label for image size selection.
 image_size_label = tk.Label(window, text="Picture size:")
 image_size_label.pack()
 
@@ -310,14 +324,14 @@ image_size_label.pack()
 image_size_var = tk.StringVar(window)
 image_size_var.set("512x512")  # Set default value.
 
-# Define the available image sizes as a list of strings.
+# Define available image sizes as a list of strings.
 image_sizes = ["256x256", "512x512", "1024x1024"]
 
-# Create the dropdown menu for selecting the image size.
+# Create dropdown menu for image size.
 image_size_menu = tk.OptionMenu(window, image_size_var, *image_sizes)
 image_size_menu.pack()
 
-# Create a label for template selection.
+# Label for template selection.
 template_label = tk.Label(window, text="Templates:")
 template_label.pack()
 
@@ -325,28 +339,28 @@ template_label.pack()
 template_var = tk.StringVar(window)
 template_var.set("template.pptx")  # Set default value.
 
-# Get the list of available templates.
+# Get list of available templates.
 templates = get_template_filenames()
 
-# Create the dropdown menu for selecting the template.
+# Create dropdown menu for templates.
 template_menu = tk.OptionMenu(window, template_var, *templates)
 template_menu.pack()
 
-# Create a function to update the template_path variable based on the selected value.
+# Function to update template_path variable based on selected value.
 def update_template_path():
     global template_path
     selected_template = template_var.get()
     template_path = os.path.join(template_folder, selected_template)
 
-# Bind the update_template_path function to the dropdown menu.
+# Bind update_template_path function to dropdown menu.
 template_var.trace("w", lambda *args: update_template_path())
 
-# Create a function to update the image_size variable based on the selected value.
+# Function to update image_size based on selected value.
 def update_image_size():
     global image_size
     image_size = image_size_var.get()
 
-# Bind the update_image_size function to the dropdown menu.
+# Bind update_image_size function to dropdown menu.
 image_size_var.trace("w", lambda *args: update_image_size())
 separator = ttk.Separator(window, orient='horizontal')
 separator.pack(fill='x', padx=10, pady=10)
@@ -360,11 +374,11 @@ essay_checkbox.pack(padx=2, pady=2)
 
 generate_mp3_var = tk.IntVar()
 
-# Create a checkbox for MP3 generation
+# Checkbox for MP3 generation
 generate_mp3_checkbox = tk.Checkbutton(window, text=" MP3 file (script needed)", variable=generate_mp3_var)
 generate_mp3_checkbox.pack()
 
-# Create button to generate PowerPoint and image.
+# Button to generate PowerPoint and media.
 generate_button = tk.Button(window, text="Generate PowerPoint and media", command=generate_powerpoint_and_image)
 generate_button.pack(padx=10, pady=10)
 separator = ttk.Separator(window, orient='horizontal')
@@ -372,15 +386,15 @@ separator.pack(fill='x', padx=10, pady=10)
 generate_more_button = tk.Button(window, text="I need only pictures", command=generate_images)
 generate_more_button.pack(padx=2, pady=2)
 
-# Create a label to display the template path and output directory.
+# Label to display the template path and output directory.
 path_label = tk.Label(window, text=f"Templates: {template_folder}\nOutput: {output_directory}\nLanguage: {language}")
 path_label.pack(padx=10, pady=10)
 
-# Create status bar label.
+# Status bar label.
 status_bar = tk.Label(window, text="Push and wait for notice...", bd=1, relief=tk.SUNKEN, anchor=tk.W)
 status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 
-# Show help message
+# Help message
 def show_help_message():
     help_window = tk.Toplevel(window)
     help_window.title("Help")
@@ -401,7 +415,7 @@ def show_help_message():
     help_window_y = window.winfo_y() + int((window_height / 2) - (help_window_height / 2))
     help_window.geometry(f"+{help_window_x}+{help_window_y}")
 
-
+# About window
 def show_about_message():
     about_window = tk.Toplevel(window)
     about_window.title("About")
@@ -428,20 +442,21 @@ def show_about_message():
     about_window_y = window.winfo_y() + int((window_height / 2) - (about_window_height / 2))
     about_window.geometry(f"+{about_window_x}+{about_window_y}")
 
+# Language window
 def open_language_window():
     # Create a new window.
     language_window = tk.Toplevel(window)
     language_window.title("Change Language")
 
-    # Create a label for the language entry.
+    # Label or the language entry.
     language_label = tk.Label(language_window, text="Must match language codes: use deutsch, italian, español \nfor de, it, es, fr, ru.. or just use codes: ja, cn, en...")
     language_label.pack()
 
-    # Create text entry for language.
+    # Text entry for language.
     language_entry = tk.Entry(language_window)
     language_entry.pack()
 
-    # Create button to update language.
+    # Button to update language.
     update_language_button = tk.Button(language_window, text="Update Language", command=lambda: update_language(language_entry.get(), language_window))
     update_language_button.pack()
 
@@ -465,17 +480,17 @@ def update_language(new_language, language_window):
 
 menu_bar = tk.Menu(window)
 
-# Create Language menu.
+# Language menu.
 language_menu = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_command(label="Language", command=open_language_window)
 
-# Create Help menu.
+# Help menu.
 help_menu = tk.Menu(menu_bar, tearoff=0)
 help_menu.add_command(label="Help", command=show_help_message)
 help_menu.add_command(label="About", command=show_about_message)
 menu_bar.add_cascade(label="Help", menu=help_menu)
 
-# Add menu bar to the main window.
+# Add menu bar to main window.
 window.config(menu=menu_bar)
 
 # Start main loop.
