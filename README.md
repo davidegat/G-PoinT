@@ -1,9 +1,10 @@
 # G-PoinT
 ![gpoint](https://user-images.githubusercontent.com/51516281/231254043-a65b5bee-75b5-4391-bb08-472becbda7f6.png)
 <br><br>
-This software interacts with GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one or more <b>picture(s)</b> to use within the presentation. G-PoinT can also generate a <b>presentation script</b> and <b>MP3 audio file</b> with the script reading. Tested on:
+This software interacts with GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one or more <b>picture(s)</b> to use within the presentation. G-PoinT can also generate a <b>presentation script</b> and <b>MP3 audio file</b> with the script reading.<br><br>
+Tested on:
 <li>Linux 5.15.0-69, Ubuntu 20.04.1, Python 3.8.10.
-<li>From next release: Windows 11, Python 3.11.3 (with pip enabled, and installed libraries)<br><br>You will need just to configure it with API KEY and customize paths in. Code is adequately commented, with instructions provided where necessary. 
+<li>Windows 11, Python 3.11.3 (with pip enabled, and installed libraries)<br><br>You will need just to configure it with API KEY and customize paths in. Please report any working scenario to upgrade this list! Code is adequately commented, with instructions provided where necessary. 
 <h3>Help testing and developing</h3>
 This code requires <b>lots</b> of API requests to be tested, mantained, upgraded, and hereby given for free. If you found it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider supporting this project API costs with any small amount via PayPal</a>. <br>If you are a developer and want to contribute with <b>ideas and code</b>, you are welcome too!<br><br>Thanks for your sincere kindness! <3<br>
 
