@@ -23,7 +23,7 @@ https://user-images.githubusercontent.com/51516281/231295684-448886f5-54c6-4501-
 <li>"Albert Einstein" slides in English<br>
 https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-b45b-fddc9c467007.mp4
 
-<h3>Install, configure and run</h3><br>
+<h3>Install, configure and run</h3>
 Both for Windows and Linux machines, <a href="https://git-scm.com/downloads">git</a> must be available.<br>
 Type following commands in Linux Terminal or Windows PowerShell Terminal.<br><br>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>.<br>Check <a href="https://github.com/davidegat/G-PoinT/releases">Releases</a> for compressed archives.<br><br>
