@@ -28,10 +28,8 @@ https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-
 <b>Python3 dependencies</b>: <code>pip install requests openai messagebox gTTS python-pptx</code><br>
 If you miss for some reason tkinter and glob: <code>pip install tkinter glob</code><br><br>
 <b>Mandatory "config.ini" configuration</b>:<br>
-<code>openai.api_key = "your_api_key"
-template_path = "./templates/template.pptx"
-template_folder = "./templates/"
-output_directory = "/path/to/your/output/directory"</code><br>
+<code>api_key = YOUR API KEY
+output_directory = Your desktop or favourite output folder</code><br>
 Language can be changed "on the fly" via GUI (see <a href="https://github.com/davidegat/G-PoinT#examples">videos</a>).<br><br>
 <b>Templates</b>:<br>
 G-PoinT has some example templates working out of the box for testing, but you may want to replace them with your own. Just copy your favourite PowerPoint templates into "templates" folder before running G-PoinT. You will find them in dropdown menu ready to be used. Please, do not delete default template, or keep at least one file named "template.pptx" into the templates folder.<br><br>
