@@ -7,6 +7,7 @@
 # Import needed libraries, se README for details.
 import os
 import requests
+import configparser
 import openai
 import glob
 import webbrowser
@@ -21,46 +22,44 @@ from pptx.dml.color import RGBColor
 from gtts import gTTS
 
 # Remember to install libraries via terminal:
-# pip install os requests openai webbrowser tkinter gTTS pptx
-# if you miss for some reason tkinter and glob: pip install tkinter glob
+# pip install os requests openai glob webbrowser tkinter gTTS pptx
+
+# Read config via config.ini file in current path
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 # --- MANDATORY SETTINGS ---
 # Set your API key, and paths for output directory.
-openai.api_key = "YOUR-API-KEY"
-output_directory = "/your/desktop/or/favourite/folder/"
+# MUST BE CHANGED VIA CONFIG.INI FILE
+openai.api_key = config.get('MANDATORY SETTINGS', 'api_key')
+output_directory = config.get('MANDATORY SETTINGS', 'output_directory')
 
 # --- DEFAULT SETTINGS ---
-template_path = "./templates/template.pptx" # default template file path
-template_folder = "./templates/" # templates folder
+# MUST BE CHANGED VIA CONFIG.INI FILE
+template_path = config.get('DEFAULT SETTINGS', 'template_path')
+template_folder = config.get('DEFAULT SETTINGS', 'template_folder')
 
 # Set output default language at startup.
 # Language settings can be changed "on the fly" via GUI
-language = "English"
+# MUST BE CHANGED VIA CONFIG.INI FILE
+language = config.get('DEFAULT SETTINGS', 'language')
 
 # If you are NOT using English, set to False to translate prompt for DALL-E.
 # This setting is changed "on the fly" via GUI.
-english = True
+# MUST BE CHANGED VIA CONFIG.INI FILE
+english = config.getboolean('DEFAULT SETTINGS', 'english')
 
-# ---- OTHER SETTINGS ----
+# --- OTHER SETTINGS ---
 # Edit only if you know what to do with GPT prompts!
-
-# Prompt for slide titles aka slide topics.
-KEYPOINT_PROMPT = "Write 8 short titles of maximum 6 words on key points to be covered in a lesson about topic: {topic}. It is important that terms {topic} always appear. From now on we will interact ONLY in good {language} language."
-
-# Prompt for slide content.
-CONTENT_PROMPT = "Summarize in 6 points and using at least 10 words the most important aspects of following topic: {topic}.\nShow me ONLY the list and no other text. From now on we will interact ONLY in good {language} language."
-
-# Picture prompt. Change last part to your favourite style, MUST be in English.
-IMAGE_PROMPT = "a portrait photo of {topic}, detailed, cgi, octane, unreal"
-
-# Define temperature value. Determines GPT randomness.
-keypoint_temperature_value = 0.5
-content_temperature_value = 0.7
-        
-# Define token length. Determines request and response lenght.
-keypoint_max_tokens=1500
-content_max_tokens=1500
-essay_max_tokens=1500
+# MUST BE CHANGED VIA CONFIG.INI FILE
+KEYPOINT_PROMPT = config.get('OTHER SETTINGS', 'keypoint_prompt')
+CONTENT_PROMPT = config.get('OTHER SETTINGS', 'content_prompt')
+IMAGE_PROMPT = config.get('OTHER SETTINGS', 'image_prompt')
+keypoint_temperature_value = config.getfloat('OTHER SETTINGS', 'keypoint_temperature_value')
+content_temperature_value = config.getfloat('OTHER SETTINGS', 'content_temperature_value')
+keypoint_max_tokens = config.getint('OTHER SETTINGS', 'keypoint_max_tokens')
+content_max_tokens = config.getint('OTHER SETTINGS', 'content_max_tokens')
+essay_max_tokens = config.getint('OTHER SETTINGS', 'essay_max_tokens')
 
 # --- CONFIGURATION END ---
 
@@ -76,7 +75,7 @@ def get_template_filenames():
 def update_status_bar(text):
     status_bar.config(text=text)
 
-# Function to generate MP3.
+# Function to generate PowerPoint presentation and image.
 def generate_mp3(essay_file_path):
     mp3_file_path = os.path.splitext(essay_file_path)[0] + ".mp3"
     with open(essay_file_path, "r") as f:
@@ -496,4 +495,3 @@ window.config(menu=menu_bar)
 
 # Start main loop.
 window.mainloop()
-
