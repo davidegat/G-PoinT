@@ -75,7 +75,7 @@ def get_template_filenames():
 def update_status_bar(text):
     status_bar.config(text=text)
 
-# Function to generate PowerPoint presentation and image.
+# Function to generate MP3.
 def generate_mp3(essay_file_path):
     mp3_file_path = os.path.splitext(essay_file_path)[0] + ".mp3"
     with open(essay_file_path, "r") as f:
