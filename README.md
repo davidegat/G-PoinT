@@ -1,7 +1,9 @@
 # G-PoinT
 ![gpoint](https://user-images.githubusercontent.com/51516281/231254043-a65b5bee-75b5-4391-bb08-472becbda7f6.png)
 <br><br>
-This software interacts with GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one or more <b>picture(s)</b> to use within the presentation. G-PoinT can also generate a <b>presentation script</b> and <b>MP3 audio file</b> with the script reading. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. <br><br>You will need just to configure it with API KEY and customize paths. Code is adequately commented, with instructions provided where necessary. 
+This software interacts with GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one or more <b>picture(s)</b> to use within the presentation. G-PoinT can also generate a <b>presentation script</b> and <b>MP3 audio file</b> with the script reading. Tested on:
+<li>Linux 5.15.0-69, Ubuntu 20.04.1, Python 3.8.10.
+<li>From next release: Windows 11, Python 3.11.3 (with pip enabled, and installed libraries)<br><br>You will need just to configure it with API KEY and customize paths in. Code is adequately commented, with instructions provided where necessary. 
 <h3>Help testing and developing</h3>
 This code requires <b>lots</b> of API requests to be tested, mantained, upgraded, and hereby given for free. If you found it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider supporting this project API costs with any small amount via PayPal</a>. <br>If you are a developer and want to contribute with <b>ideas and code</b>, you are welcome too!<br><br>Thanks for your sincere kindness! <3<br>
 
@@ -33,11 +35,11 @@ For further configurations, look variables and comments at the beginning of the 
 <b>Templates</b>:<br>
 G-PoinT has some example templates working out of the box for testing, but you may want to replace them with your own. Just copy your favourite PowerPoint templates into "templates" folder before running G-PoinT. You will find them in dropdown menu ready to be used. Please, do not delete default template, or keep at least one file named "template.pptx" into the templates folder.<br><br>
 <b>Running and using G-PoinT</b>:<br>
-Via Linux terminal type:<br>
-<code>cd G-PoinT</code><br>
-<code>chmod +x ./pptgui.py</code> (type this command <b>only one time</b>)<br>
-<code>./pptgui.py</code><br>
-You can use the included G-PoinT.desktop file and access GUI via desktop, copy it to your desktop, remember to edit paths accordingly, and make it executable via terminal with: <code>chmod +x G-PoinT.desktop</code> (see <a href="https://developer-old.gnome.org/desktop-entry-spec/">Desktop Entry Specifications</a>).<br><br>
+Via Linux or Windows terminal type:<br>
+<code>cd G-PoinT</code><br> (both Linux and Windows)
+<code>chmod +x ./pptgui.py</code> (Linux only - type this command <b>only one time</b>)<br>
+<code>./pptgui.py</code><br> (Windows: <code>python.exe pptgui.py</code><br>
+For Linux: you can use the included G-PoinT.desktop file and access GUI via desktop, copy it to your desktop, remember to edit paths accordingly, and make it executable via terminal with: <code>chmod +x G-PoinT.desktop</code> (see <a href="https://developer-old.gnome.org/desktop-entry-spec/">Desktop Entry Specifications</a>).<br><br>
 <li>Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases")
 <li>Insert number of pictures to be generated ("0" for no picture)
 <li>Input picture size
