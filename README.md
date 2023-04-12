@@ -38,8 +38,8 @@ In this repository, you can find [examples in different languages](https://githu
 
 Both for Windows and Linux machines, [git](https://git-scm.com/downloads) and [pip](https://pip.pypa.io/en/stable/installation/) must be installed. Type following commands in Linux Terminal or Windows PowerShell Terminal.
 
-**Download:** `git clone https://github.com/davidegat/G-PoinT.git`.\
-Check [Releases](https://github.com/davidegat/G-PoinT/releases) for compressed archives.
+**Download:** `git clone https://github.com/davidegat/G-PoinT.git`\
+or check [Releases](https://github.com/davidegat/G-PoinT/releases) for compressed archives.
 
 **Python3 dependencies**: `pip install requests openai messagebox gTTS python-pptx`\
 If you miss tkinter and glob for some reason: `pip install tkinter glob`
@@ -58,7 +58,7 @@ Linux:
 - Via terminal: `cd G-PoinT`
 - `chmod +x ./pptgui.py` (type this command **only one time**)
 - `./pptgui.py`
-- You can use the included G-PoinT.desktop file and access GUI via desktop, copy it to your desktop, remember to edit paths accordingly, and make it executable via terminal with: `chmod +x G-PoinT.desktop` (see [Desktop Entry Specifications](https://developer-old.gnome.org/desktop-entry-spec/)).
+- You can use included G-PoinT.desktop file and access GUI via desktop, copy it to your desktop, remember to edit paths accordingly, and make it executable via terminal with: `chmod +x G-PoinT.desktop` (see [Desktop Entry Specifications](https://developer-old.gnome.org/desktop-entry-spec/)).
 
 Windows:
 - Open Windows PowerShell terminal (WIN+R, `powershell` -enter-)
@@ -69,16 +69,16 @@ Windows:
 
 **Usage:**
 - Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases")
-- Insert the number of pictures to be generated ("0" for no picture)
+- Insert number of pictures to be generated ("0" for no picture)
 - Input picture size
-- Select favourite template from the drop-down menu
+- Select favourite template from drop-down menu
 - Look at further generation options: you can generate both a **script** for your presentation and an **MP3 file** of it, to use within the presentation.
-- Click on the button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in the custom folder.
-- You can also choose to **only generate pictures** by clicking the "I need only pictures" button.\
+- Click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder.
+- You can also choose to **only generate pictures** by clicking "I need only pictures" button.\
   **Please note that it may take up to one minute to generate one PowerPoint and one picture!** More pics mean more time.
 
 **Language settings instructions**\
-By modifying the "language" variable in the config file, you will set your default language. Anyway, by clicking the language menu, you can customize output to any language supported by GPT on the fly. To make it compatible with **gtts**, G-PoinT must obtain a language code from the first characters of your input. Examples are:
+By modifying the "language" variable in config file, you will set your default language. Anyway, by clicking language menu, you can customize output to any language supported by GPT on the fly. To make it compatible with **gtts**, G-PoinT must obtain a language code from first characters of your input. Examples are:
 - **it**alian
 - **en**glish
 - **de**utsch
@@ -87,18 +87,18 @@ Some languages may create chaos (e.g. Portuguese - pt, Chinese - zh...), but GPT
 G-PoinT can work well with English input also if a different language is set, but best results are obtained if input is written in your own language (generates a better presentation script and MP3).
 
 **Customize GPT results for text and pictures**\
-For different results (more slides, more text, specific contexts), modify the [prompt](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api) in **config.ini**. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for picture generation, modify DALL-E prompt accordingly, read comments in the code for details. Also, refer to [pptx library documentation](https://python-pptx.readthedocs.io/en/latest/) to customize font, colors, text size, and other presentation elements.
+For different results (more slides, more text, specific contexts), modify [prompt](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api) in **config.ini**. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for picture generation, modify DALL-E prompt accordingly. Also, refer to [pptx library documentation](https://python-pptx.readthedocs.io/en/latest/) to customize font, colors, text size, and other presentation elements.
 
-**Please note**: the script actually works well generating 8 slides made of 6 points each. If you need to increase the slide number, the amount of text, or to give GPT more "fantasy" editing the [temperature](https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature) parameters, you should check for appropriate [token size](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) and be ready to wait **longer generation times** and pay more on API costs (still really low btw).
+**Please note**: If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the [temperature](https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature) parameters, you should check for appropriate [token size](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) and be ready to wait **longer generation times** and pay more on API costs (still really low btw).
 
 **What it does?**
-- Shows Tkinter GUI and asks the user for a topic and the number of pictures to generate
+- Shows Tkinter GUI and asks user for a topic and the number of pictures to generate
 - Sends prompt and topic to GPT
 - Gets back 8 key points, each one will be a slide
 - Sends one prompt for each key point to generate slide content text
-- Creates a PPTX file from the template with key points as slide titles, and fills them with generated text
-- Translates the topic from whatever language to English (also via GPT prompt - if not already in English).
-- Asks DALL-E for pictures using the topic in English
+- Creates a PPTX file from template with key points as slide titles, and fills them with generated text
+- Translates topic from whatever language to English (also via GPT prompt - if not already in English).
+- Asks DALL-E for pictures using topic in English
 - Saves PPTX and PNG files.
 - Generates other files at user request: presentation script, MP3 audio of the script.
 - The first slide will be empty for user customization
@@ -106,6 +106,6 @@ For different results (more slides, more text, specific contexts), modify the [p
 **Troubleshooting and Limitations**
 1. Might rarely generate inappropriate or irrelevant content. In such cases, you can rerun the script with a modified prompt or temperature settings to achieve better results.
 2. Ensure that you have a stable internet connection to use GPT and DALL-E APIs. Any interruption may cause the script to fail.
-3. Might take some time to generate the slides and images, depending on the number of slides, tokens, and images requested. Please be patient while the script works.
+3. Might take some time to generate slides and images, depending on the number of slides, tokens, and images requested. Please be patient while the G-PoinT works.
 4. Increasing the number of slides or points might lead to longer generation times and higher API costs.
-5. The quality of images generated by DALL-E might not always meet expectations. You can adjust the DALL-E prompt and temperature settings to improve image results.
+5. Quality of images generated by DALL-E might not always meet expectations. You can adjust the DALL-E prompt and temperature settings to improve image results.
