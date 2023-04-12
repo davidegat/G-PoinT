@@ -30,7 +30,7 @@ template_folder = "./templates/"
 output_directory = "/path/to/your/output/directory"</code><br>
 For further configurations, look variables and comments at the beginning of the script. Language can also be changed "on the fly" via GUI (see <a href="https://github.com/davidegat/G-PoinT#examples">videos</a>).<br><br>
 <b>Templates</b>:<br>
-G-PoinT has some example templates working out of the box for testing, but you may want to replace them with your own. Just copy your favourite PowerPoint templates into "templates" folder before running G-PoinT. You will find them in dropdown menu ready to be used. Please, do not delete default template, or keep ad least one file named "template.pptx" into the templates folder.<br><br>
+G-PoinT has some example templates working out of the box for testing, but you may want to replace them with your own. Just copy your favourite PowerPoint templates into "templates" folder before running G-PoinT. You will find them in dropdown menu ready to be used. Please, do not delete default template, or keep at least one file named "template.pptx" into the templates folder.<br><br>
 <b>Running and using G-PoinT</b>:<br>
 Via Linux terminal type:<br>
 <code>cd G-PoinT</code><br>
