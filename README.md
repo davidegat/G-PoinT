@@ -22,7 +22,7 @@ https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-
 
 <h3>Install, configure and run</h3>
 <b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>. Check Releases for compressed archives.<br><br>
-<b>Python3 dependencies</b>: <code>pip install requests openai glob3 tkinter python-pptx gtts</code><br><br>
+<b>Python3 dependencies</b>: <code>pip install os requests openai glob webbrowser tkinter gTTS pptx</code><br><br>
 <b>Mandatory pptgui.py configuration</b>:<br>
 <code>openai.api_key = "your_api_key"
 template_path = "./templates/template.pptx"
@@ -69,7 +69,7 @@ For different results (more slides, more text, specific contexts), modify the <a
 <li>First slide will be empty for user customization
 
 <h3>Dependencies and libraries explained</h3>
-
+<code>pip install os requests openai glob webbrowser tkinter gTTS pptx</code><br>
 <li>`os`: Library to interact with the operating system.
 <li>`requests`: Library to send HTTP/1.1 requests.
 <li>`openai`: Library to interact with the OpenAI API.
