@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/51516281/231295684-448886f5-54c6-4501-
 https://user-images.githubusercontent.com/51516281/231295977-36844280-51d5-49fe-b45b-fddc9c467007.mp4
 
 <h3>Install, configure and run</h3>
-<b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>. Check Releases for compressed archives.<br><br>
+<b>Download:</b> <code>git clone https://github.com/davidegat/G-PoinT.git</code>.<br>Check <a href="https://github.com/davidegat/G-PoinT/releases">Releases</a> for compressed archives.<br><br>
 <b>Python3 dependencies</b>: <code>pip install os requests openai glob webbrowser tkinter gTTS pptx</code><br><br>
 <b>Mandatory pptgui.py configuration</b>:<br>
 <code>openai.api_key = "your_api_key"
