@@ -39,8 +39,9 @@ You can use the included G-PoinT.desktop file and access GUI via desktop, rememb
 <li>Input picture size
 <li>Select favourite template from drop down menu
 <li>Look at further generation options: you can generate both a <b>script</b> for your presentation and an <b>MP3 file</b> of it, to use within the presentation.
-<li>Click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder.<br><br><b>Please note that it may take up to one minute to generate one PowerPoint and one picture!</b> More pics means more time.<br><br>You can also choose to <b>only generate pictures</b> by clicking the "I need only pictures" button.
-<h3>Language instructions</h3>
+<li>Click on button, wait for a reasonable amount of time to receive PPTX and PNG outputs directly in custom folder.
+<li>You can also choose to <b>only generate pictures</b> by clicking the "I need only pictures" button.<br><br><b>Please note that it may take up to one minute to generate one PowerPoint and one picture!</b> More pics means more time.<br><br>
+<h3>Language settings instructions</h3>
 By clicking the language menu, you can customize output language to any language supported by GPT. To make it compatible with <b>gtts</b>, G-PoinT must obtain a language code from first characters of your input. Examples are:<br>
 <li><b>it</b>alian
 <li><b>en</b>glish
