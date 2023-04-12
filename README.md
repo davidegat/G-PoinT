@@ -3,7 +3,7 @@
 <br><br>
 This software interacts with GPT via <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> to create a <b>complete</b> PowerPoint file in <b>any language</b>, including slides and text, <b>from a single topic input</b>. <a href="https://platform.openai.com/docs/api-reference/images">DALL-E</a> is then used to generate and download one or more <b>picture(s)</b> to use within the presentation. G-PoinT can also generate a <b>presentation script</b> and <b>MP3 audio file</b> with the script reading. Only tested on Linux 5.15.0-69 / Ubuntu 20.04.1 / Python 3.8.10. <br><br>You will need just to configure it with API KEY and customize paths. Code is adequately commented, with instructions provided where necessary. 
 <h3>Help testing</h3>
-This code requires <b>lots</b> of API requests to be tested, mantained and upgraded, and hereby given for free. If you find it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider supporting with any amount via PayPal</a>. Thanks for your kindness!<br>
+This code requires <b>lots</b> of API requests to be tested, mantained, upgraded, and hereby given for free. If you found it useful, please <a href="https://www.paypal.com/donate/?hosted_button_id=2EGA7T2LTD3AU">consider supporting this project API costs with any small amount via PayPal</a>. Thanks for your sincere kindness! gat.<br>
 
 <h3>Examples</h3>
 In this repository you can find <a href="https://github.com/davidegat/G-PoinT/tree/main/examples">examples in different languages</a>: full presentations, presentation scripts, pictures, MP3 files. Take a look to see if this software can satisfy your needs! Files are uploaded as-is to understand both capabilities and limitations.<br><br>
