@@ -37,7 +37,6 @@ Via Linux terminal type:<br>
 <code>chmod +x ./pptgui.py</code> (type this command <b>only one time</b>)<br>
 <code>./pptgui.py</code><br>
 You can use the included G-PoinT.desktop file and access GUI via desktop, copy it to your desktop, remember to edit paths accordingly, and make it executable via terminal with: <code>chmod +x G-PoinT.desktop</code> (see <a href="https://developer-old.gnome.org/desktop-entry-spec/">Desktop Entry Specifications</a>).<br><br>
-
 <li>Insert a topic (for example, "Dolphins", "General Relativity", "Heart Diseases")
 <li>Insert number of pictures to be generated ("0" for no picture)
 <li>Input picture size
@@ -53,7 +52,7 @@ By modifying the "language" variable into the script, you will set your default 
 Some languages may create chaos (e.g. Portuguese - pt, Chinese - zh...), but GPT can generate text only with language codes, in these cases <b>just input your language code</b> (<b>zh</b>, <b>pt</b>, <b>en</b>, <b>fi</b>..). You can use this format for <b>any</b> language if unsure.<br><br>G-PoinT can work well with English input also if a different language is set, but best results are obtained if input is written in your own language (generates a better presentation script and MP3).
 <h3>Customize GPT results for text and pictures</h3>
 For different results (more slides, more text, specific contexts), modify the <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt</a> at the beginning of the script directly. Try different prompts, temperatures, and tokens for fine-tuned results. If you need more realistic, artistic, or other styles for picture generation, modify DALL-E prompt accordingly, read comments in code for details. Also refer to <a href="https://python-pptx.readthedocs.io/en/latest/">pptx library documentation</a> to customize font, colors, text size and other presentation elements.<br><br>
-<b>Please note</b>: script actually works well generating 8 slides made of 6 points each. If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the <a href="https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature">temperature</a> parameters, you should check for apropriate <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">token size</a> an be ready to wait <b>longer generation times</b>, and pay more on API costs (still really low btw).<br><br>
+<b>Please note</b>: script actually works well generating 8 slides made of 6 points each. If you need to increase slide number, amount of text, or to give GPT more "fantasy" editing the <a href="https://platform.openai.com/docs/api-reference/completions/create#completions/create-temperature">temperature</a> parameters, you should check for apropriate <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">token size</a> an be ready to wait <b>longer generation times</b>, and pay more on API costs (still really low btw).
 
 <h3>What it does?</h3>
 
